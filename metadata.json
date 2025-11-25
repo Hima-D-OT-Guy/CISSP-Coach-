@@ -1,0 +1,5 @@
+{
+  "name": "CISSP Coach AI",
+  "description": "An intelligent, adaptive CISSP tutor powered by Gemini. Upload your study guide to generate personalized quizzes, deep dives, and performance tracking across all 8 domains.",
+  "requestFramePermissions": []
+}
