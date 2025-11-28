@@ -155,7 +155,7 @@ function parseObjectiveMap(text: string): ObjectiveMapItem[] {
 
   // Regex: "1.1 Description... 19"
   // Look for ID (X.X or X.X.X)
-  const regex = /(\d+(?:\.\d+)+)\s+([\s\S]+?)\s+(\d+(?:,\s*\d+)*)$/gm;
+  const regex = /(?:^|\n)\s*(\d+(?:\.\d+)+)\s+(.+?)\s+(\d+(?:,\s*\d+)*)\s*(?=\n|$)/g;
 
   let match;
   while ((match = regex.exec(text)) !== null) {
