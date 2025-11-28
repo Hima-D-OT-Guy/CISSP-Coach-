@@ -291,11 +291,16 @@ async function main() {
     chapterElements: {}
   };
 
-  // 1. Objective Map
-  console.log('\n🗺️  Extracting Objective Map (Pages 44-61)...');
-  const mapText = await extractRange(pdf, CONFIG.ranges.objectiveMap.start, CONFIG.ranges.objectiveMap.end);
-  bookData.objectiveMap = parseObjectiveMap(mapText);
-  console.log(`✓ Found ${bookData.objectiveMap.length} objectives`);
+  // 1. Objective Map (Manual Load)
+  console.log('\n🗺️  Loading Objective Map from manual file...');
+  const MANUAL_MAP_PATH = path.resolve(__dirname, '../public/objective_map_manual.json');
+  if (fs.existsSync(MANUAL_MAP_PATH)) {
+    const mapContent = fs.readFileSync(MANUAL_MAP_PATH, 'utf-8');
+    bookData.objectiveMap = JSON.parse(mapContent);
+    console.log(`✓ Loaded ${bookData.objectiveMap.length} objectives from manual file`);
+  } else {
+    console.warn('⚠️ Manual objective map not found, skipping...');
+  }
 
   // 2. Assessment Test & Answers
   console.log('\n📝 Extracting Assessment Test (Pages 62-85)...');

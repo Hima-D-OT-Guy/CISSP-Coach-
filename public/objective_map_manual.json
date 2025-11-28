@@ -1,0 +1,324 @@
+[
+    {
+        "domainId": "1.1",
+        "description": "Understand, adhere to, and promote professional ethics",
+        "chapters": [
+            19
+        ]
+    },
+    {
+        "domainId": "1.1.1",
+        "description": "ISC2 Code of Professional Ethics",
+        "chapters": [
+            19
+        ]
+    },
+    {
+        "domainId": "1.1.2",
+        "description": "Organizational code of ethics",
+        "chapters": [
+            19
+        ]
+    },
+    {
+        "domainId": "1.2",
+        "description": "Understand and apply security concepts",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.2.1",
+        "description": "Confidentiality, integrity, and availability, authenticity, and nonrepudiation (5 Pillars of Information Security)",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.3",
+        "description": "Evaluate and apply security governance principles",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.3.1",
+        "description": "Alignment of the security function to business strategy, goals, mission, and objectives",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.3.2",
+        "description": "Organizational processes (e.g., acquisitions, divestitures, governance committees)",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.3.3",
+        "description": "Organizational roles and responsibilities",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.3.4",
+        "description": "Security control frameworks (e.g., ISO, NIST, COBIT, SABSA, PCI, FedRAMP)",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.3.5",
+        "description": "Due care/due diligence",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.4",
+        "description": "Understand legal, regulatory, and compliance issues that pertain to information security in a holistic context",
+        "chapters": [
+            4
+        ]
+    },
+    {
+        "domainId": "1.4.1",
+        "description": "Cybercrimes and data breaches",
+        "chapters": [
+            4
+        ]
+    },
+    {
+        "domainId": "1.4.2",
+        "description": "Licensing and Intellectual Property requirements",
+        "chapters": [
+            4
+        ]
+    },
+    {
+        "domainId": "1.4.3",
+        "description": "Import/export controls",
+        "chapters": [
+            4
+        ]
+    },
+    {
+        "domainId": "1.4.4",
+        "description": "Transborder data flow",
+        "chapters": [
+            4
+        ]
+    },
+    {
+        "domainId": "1.4.5",
+        "description": "Issues related to privacy (e.g., GDPR, CCPA, PIPL, POPIA)",
+        "chapters": [
+            4
+        ]
+    },
+    {
+        "domainId": "1.4.6",
+        "description": "Contractual, legal, industry standards, and regulatory requirements",
+        "chapters": [
+            4
+        ]
+    },
+    {
+        "domainId": "1.5",
+        "description": "Understand requirements for investigation types (administrative, criminal, civil, regulatory, industry standards)",
+        "chapters": [
+            19
+        ]
+    },
+    {
+        "domainId": "1.6",
+        "description": "Develop, document, and implement security policy, standards, procedures, and guidelines",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.7",
+        "description": "Identify, analyze, assess, prioritize, and implement Business Continuity (BC) requirements",
+        "chapters": [
+            3
+        ]
+    },
+    {
+        "domainId": "1.7.1",
+        "description": "Business Impact Analysis (BIA)",
+        "chapters": [
+            3
+        ]
+    },
+    {
+        "domainId": "1.7.2",
+        "description": "External dependencies",
+        "chapters": [
+            3
+        ]
+    },
+    {
+        "domainId": "1.8",
+        "description": "Contribute to and enforce personnel security policies and procedures",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.8.1",
+        "description": "Candidate screening and hiring",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.8.2",
+        "description": "Employment agreements and policy driven requirements",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.8.3",
+        "description": "Onboarding, transfers, and termination processes",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.8.4",
+        "description": "Vendor, consultant, and contractor agreements and controls",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9",
+        "description": "Understand and apply risk management concepts",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.1",
+        "description": "Threat and vulnerability identification",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.2",
+        "description": "Risk analysis, assessment, and scope",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.3",
+        "description": "Risk response and treatment (e.g., cybersecurity insurance)",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.4",
+        "description": "Applicable types of controls (e.g., preventive, detection, corrective)",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.5",
+        "description": "Control assessments (e.g., security and privacy)",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.6",
+        "description": "Continuous monitoring and measurement",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.7",
+        "description": "Reporting (e.g., internal, external)",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.8",
+        "description": "Continuous improvement (e.g., risk maturity modeling)",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.9.9",
+        "description": "Risk frameworks (e.g., ISO, NIST, COBIT, SABSA, PCI)",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.10",
+        "description": "Understand and apply threat modeling concepts and methodologies",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.11",
+        "description": "Apply supply chain risk management (SCRM) concepts",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.11.1",
+        "description": "Risks associated with acquisition of products/services from suppliers/providers",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.11.2",
+        "description": "Risk mitigations (e.g., third-party assessments, security requirements)",
+        "chapters": [
+            1
+        ]
+    },
+    {
+        "domainId": "1.12",
+        "description": "Establish and maintain a security awareness, education, and training program",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.12.1",
+        "description": "Methods and techniques to increase awareness and training",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.12.2",
+        "description": "Periodic content reviews for emerging technologies and trends",
+        "chapters": [
+            2
+        ]
+    },
+    {
+        "domainId": "1.12.3",
+        "description": "Program effectiveness evaluation",
+        "chapters": [
+            2
+        ]
+    }
+]
