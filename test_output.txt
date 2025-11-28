@@ -1,0 +1,60 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.14 [39m[90mC:/Users/himan/CISSP Coach/CISSP-Coach-[39m
+
+[90mstdout[2m | services/apiRetry.test.ts[2m > [22m[2mretryWithBackoff[2m > [22m[2mshould retry on 429 error
+[22m[39m[Retry] Attempt 1/3 failed. Retrying in 1093ms... Error: Rate Limit
+
+[90mstdout[2m | services/apiRetry.test.ts[2m > [22m[2mretryWithBackoff[2m > [22m[2mshould retry on 503 error
+[22m[39m[Retry] Attempt 1/3 failed. Retrying in 1057ms... Error: Service Unavailable
+
+[90mstdout[2m | services/apiRetry.test.ts[2m > [22m[2mretryWithBackoff[2m > [22m[2mshould fail after max retries
+[22m[39m[Retry] Attempt 1/3 failed. Retrying in 1087ms... Error: Rate Limit
+
+[90mstdout[2m | services/apiRetry.test.ts[2m > [22m[2mretryWithBackoff[2m > [22m[2mshould fail after max retries
+[22m[39m[Retry] Attempt 2/3 failed. Retrying in 2073ms... Error: Rate Limit
+
+(node:36372) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 6)
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31mΓ¥»[39m services/apiRetry.test.ts [2m([22m[2m5 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 26[2mms[22m[39m
+     [32mΓ£ô[39m should return result immediately if operation succeeds[32m 5[2mms[22m[39m
+     [32mΓ£ô[39m should retry on 429 error[32m 5[2mms[22m[39m
+     [32mΓ£ô[39m should retry on 503 error[32m 2[2mms[22m[39m
+[31m     [31m├ù[31m should fail after max retries[39m[32m 10[2mms[22m[39m
+     [32mΓ£ô[39m should not retry on non-transient errors (e.g. 400)[32m 1[2mms[22m[39m
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Failed Tests 1 ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+ FAIL  services/apiRetry.test.ts > retryWithBackoff > should fail after max retries
+AssertionError: expected "vi.fn()" to be called 4 times, but got 3 times
+ Γ¥» services/apiRetry.test.ts:62:24
+     60| 
+     61|         await expect(promise).rejects.toEqual({ status: 429, message: ΓÇª
+     62|         expect(mockFn).toHaveBeenCalledTimes(4); // Initial + 3 retries
+       |                        ^
+     63|     });
+     64| 
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/1]ΓÄ»
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Unhandled Errors ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ» Unhandled Rejection ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+Unknown Error: Rate Limit
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+Serialized Error: { status: 429 }
+This error originated in "services/apiRetry.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should fail after max retries". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m4 passed[39m[22m[90m (5)[39m
+[2m     Errors [22m [1m[31m1 error[39m[22m
+[2m   Start at [22m 10:35:25
+[2m   Duration [22m 1.44s[2m (transform 72ms, setup 168ms, import 61ms, tests 26ms, environment 994ms)[22m
+

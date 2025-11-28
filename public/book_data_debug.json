@@ -1,0 +1,651 @@
+{
+  "skippedPages": [
+    {
+      "pageNum": 1,
+      "reason": "Manually excluded page"
+    },
+    {
+      "pageNum": 2,
+      "reason": "Manually excluded page"
+    },
+    {
+      "pageNum": 3,
+      "reason": "Manually excluded page"
+    },
+    {
+      "pageNum": 4,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 5,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 6,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 7,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 8,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 9,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 10,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 11,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 12,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 13,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 14,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 15,
+      "reason": "Table of Contents"
+    },
+    {
+      "pageNum": 16,
+      "reason": "List of Figures/Tables"
+    },
+    {
+      "pageNum": 17,
+      "reason": "List of Figures/Tables"
+    },
+    {
+      "pageNum": 18,
+      "reason": "List of Figures/Tables"
+    },
+    {
+      "pageNum": 19,
+      "reason": "List of Figures/Tables"
+    },
+    {
+      "pageNum": 20,
+      "reason": "List of Figures/Tables"
+    },
+    {
+      "pageNum": 21,
+      "reason": "List of Figures/Tables"
+    },
+    {
+      "pageNum": 22,
+      "reason": "List of Figures/Tables"
+    },
+    {
+      "pageNum": 800,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 801,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 802,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 803,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 804,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 805,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 806,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 807,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 808,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 809,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 810,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 811,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 812,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 813,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 814,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 815,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 816,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 817,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 818,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 819,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 820,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 821,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 822,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 823,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 824,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 825,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 826,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 827,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 828,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 829,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 830,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 831,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 832,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 833,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 834,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 835,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 836,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 837,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 838,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 839,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 840,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 841,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 842,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 843,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 844,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 845,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 846,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 847,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 848,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 849,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 850,
+      "reason": "Index"
+    },
+    {
+      "pageNum": 851,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 852,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 853,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 854,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 855,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 856,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 857,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 858,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 859,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 860,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 861,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 862,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 863,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 864,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 865,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 866,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 867,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 868,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 869,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 870,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 871,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 872,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 873,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 874,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 875,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 876,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 877,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 878,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 879,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 880,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 881,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 882,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 883,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 884,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 885,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 886,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 887,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 888,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 889,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 890,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 891,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 892,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 893,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 894,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 895,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 896,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 897,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 898,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 899,
+      "reason": "Appendices"
+    },
+    {
+      "pageNum": 900,
+      "reason": "Appendices"
+    }
+  ],
+  "chapterMarkers": [
+    {
+      "pageNum": 34,
+      "chapterNum": 1,
+      "title": "Security and Risk Management",
+      "confidence": 1,
+      "position": 14904
+    },
+    {
+      "pageNum": 155,
+      "chapterNum": 2,
+      "title": "Personnel Security and Risk Management",
+      "confidence": 1,
+      "position": 211672
+    },
+    {
+      "pageNum": 260,
+      "chapterNum": 3,
+      "title": "Business Continuity Planning",
+      "confidence": 1,
+      "position": 402229
+    },
+    {
+      "pageNum": 306,
+      "chapterNum": 4,
+      "title": "Laws, Regulations, and Compliance",
+      "confidence": 1,
+      "position": 476733
+    },
+    {
+      "pageNum": 363,
+      "chapterNum": 5,
+      "title": "Protecting Security of Assets",
+      "confidence": 1,
+      "position": 572664
+    },
+    {
+      "pageNum": 418,
+      "chapterNum": 6,
+      "title": "Cryptography and Symmetric Key",
+      "confidence": 1,
+      "position": 669587
+    },
+    {
+      "pageNum": 478,
+      "chapterNum": 7,
+      "title": "PKI and Cryptographic Applications",
+      "confidence": 1,
+      "position": 764478
+    },
+    {
+      "pageNum": 545,
+      "chapterNum": 8,
+      "title": "Principles of Security Models, Design, and",
+      "confidence": 1,
+      "position": 868801
+    },
+    {
+      "pageNum": 607,
+      "chapterNum": 9,
+      "title": "Security Vulnerabilities, Threats, and",
+      "confidence": 1,
+      "position": 970922
+    },
+    {
+      "pageNum": 732,
+      "chapterNum": 10,
+      "title": "Physical Security Requirements",
+      "confidence": 1,
+      "position": 1205774
+    },
+    {
+      "pageNum": 1686,
+      "chapterNum": 11,
+      "title": "Secure Network Architecture and",
+      "confidence": 1,
+      "position": 2630447
+    },
+    {
+      "pageNum": 936,
+      "chapterNum": 12,
+      "title": "Secure Communications and Network",
+      "confidence": 1,
+      "position": 1385591
+    },
+    {
+      "pageNum": 1024,
+      "chapterNum": 13,
+      "title": "Managing Identity and Authentication",
+      "confidence": 1,
+      "position": 1543863
+    },
+    {
+      "pageNum": 1082,
+      "chapterNum": 14,
+      "title": "Controlling and Monitoring Access",
+      "confidence": 1,
+      "position": 1640066
+    },
+    {
+      "pageNum": 1151,
+      "chapterNum": 15,
+      "title": "Security Assessment and Testing",
+      "confidence": 1,
+      "position": 1757056
+    },
+    {
+      "pageNum": 1215,
+      "chapterNum": 16,
+      "title": "Managing Security Operations",
+      "confidence": 1,
+      "position": 1842230
+    },
+    {
+      "pageNum": 1273,
+      "chapterNum": 17,
+      "title": "Preventing and Responding to Incidents",
+      "confidence": 1,
+      "position": 1938439
+    },
+    {
+      "pageNum": 1360,
+      "chapterNum": 18,
+      "title": "Disaster Recovery Planning",
+      "confidence": 1,
+      "position": 2089574
+    },
+    {
+      "pageNum": 1432,
+      "chapterNum": 19,
+      "title": "Investigations and Ethics",
+      "confidence": 1,
+      "position": 2208820
+    },
+    {
+      "pageNum": 1479,
+      "chapterNum": 20,
+      "title": "Software Development Security",
+      "confidence": 1,
+      "position": 2288628
+    },
+    {
+      "pageNum": 1557,
+      "chapterNum": 21,
+      "title": "Malicious Code and Application Attacks",
+      "confidence": 1,
+      "position": 2415637
+    }
+  ],
+  "stats": {
+    "totalPages": 1899,
+    "processedPages": 1776,
+    "chaptersFound": 21,
+    "totalCharacters": 2842178
+  }
+}

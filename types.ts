@@ -7,10 +7,10 @@ export enum MessageRole {
 export interface QuizQuestion {
   id: string;
   question: string;
-  options: string[]; // e.g. ["A. ...", "B. ...", "C. ...", "D. ..."]
-  correctIndex: number; // 0-based index of options
+  options: string[];
+  correctIndex: number;
   explanation: string;
-  domain?: string;      // optional CISSP domain name
+  domain?: string;
   difficulty?: "easy" | "medium" | "hard";
 }
 
@@ -55,7 +55,7 @@ export enum Domain {
 export interface DomainStats {
   id: string;
   name: string;
-  score: number; // 0-100
+  score: number;
   questionsAnswered: number;
   masteryLevel: 'Novice' | 'Intermediate' | 'Advanced' | 'Expert';
 }
@@ -66,6 +66,48 @@ export enum TeachingMode {
   EXAM_PRACTICE = "Exam Practice"
 }
 
+export type TopicStatus = 'not_started' | 'in_progress' | 'completed';
+
+export interface TOCItem {
+  id: string;
+  title: string;
+  level: number; // 1 for Domain, 2 for Topic
+  status: TopicStatus;
+  children?: TOCItem[];
+}
+
+export type AccountTier = 'free' | 'paid';
+
+export interface UserSettings {
+  userName: string;
+  apiKey: string;
+  tier: AccountTier;
+}
+
+// --- Phase 8: Advanced Parsing Interfaces ---
+
+export interface AssessmentTest {
+  id: string;
+  title: string;
+  questions: QuizQuestion[];
+}
+
+export interface ChapterElements {
+  tips: string[];
+  summaries: string[];
+  studyEssentials: string[];
+  writtenLabs: { question: string; answer?: string }[];
+  reviewQuestions: QuizQuestion[];
+}
+
+export interface ProcessedBook {
+  fullText: string;
+  sections: Record<string, string>;
+  toc: TOCItem[];
+  assessmentTest?: AssessmentTest;
+  chapterElements?: Record<string, ChapterElements>;
+}
+
 export interface AppState {
   hasFile: boolean;
   fileName: string | null;
@@ -74,5 +116,9 @@ export interface AppState {
   mode: TeachingMode;
   chatHistory: Message[];
   stats: DomainStats[];
+  toc?: TOCItem[];
   apiKeyValid: boolean;
+  tokenCount?: number;
+  userSettings?: UserSettings;
+  processedBook?: ProcessedBook;
 }

@@ -1,0 +1,529 @@
+Chapter 1
+Security Governance Through Principles and
+Policies
+THE CISSP TOPICS COVERED IN THIS CHAPTER
+INCLUDE:
+Domain 1.0: Security and Risk Management
+
+1.2 Understand and apply security concepts
+
+1.2.1 Confidentiality, integrity, and availability,
+authenticity, and nonrepudiation (5 Pillars of
+Information Security)
+
+1.3 Evaluate and apply security governance principles
+
+1.3.1 Alignment of the security function to business
+strategy, goals, mission, and objectives
+
+1.3.2 Organizational processes (e.g., acquisitions,
+divestitures, governance committees)
+
+1.3.3 Organizational roles and responsibilities
+
+1.3.4 Security control frameworks (e.g., International
+Organization for Standardization (ISO), National
+Institute of Standards and Technology (NIST),
+Control Objectives for Information and Related
+Technology (COBIT), Sherwood Applied Business
+Security Architecture (SABSA), Payment Card
+Industry (PCI), Federal Risk and Authorization
+Management Program (FedRAMP))
+
+1.3.5 Due care/due diligence
+
+1.6 Develop, document, and implement security policy,
+standards, procedures, and guidelines
+
+1.10 Understand and apply threat modeling concepts and
+methodologies
+
+1.11 Apply supply chain risk management (SCRM)
+concepts
+
+1.11.1 Risks associated with the acquisition of products
+and services from suppliers and providers (e.g.,
+product tampering, counterfeits, implants)
+1.11.2 Risk mitigations (e.g., third-party assessment
+and monitoring, minimum security requirements,
+service level requirements, silicon root of trust,
+physically unclonable function, software bill of
+materials)
+Domain 3.0 Security Architecture and Engineering
+
+3.1 Research, implement, and manage engineering
+processes using secure design principles
+
+3.1.1 Threat modeling
+
+3.1.3 Defense in depth
+The Security and Risk Management domain encompasses many of
+the foundational elements of security solutions. Additional elements
+of this domain are discussed in various chapters:
+Chapter 2, “Personnel Security and Risk Management Concepts”
+Chapter 3, “Business Continuity Planning”
+Chapter 4, “Laws, Regulations, and Compliance”
+Chapter 19, “Investigations and Ethics”
+Please review all these chapters to have a complete perspective on
+the topics of this domain.
+
+Security 101
+
+We often hear how important security is, but we don't always
+understand why. Security is essential because it helps to ensure that
+an organization can continue to exist and operate despite any
+attempts to steal its data or compromise its physical or logical
+elements. Security is an element of business management rather
+than only an IT concern. Furthermore, IT and security are different.
+
+Information technology (IT)
+ 
+or even
+ 
+information systems (IS)
+ 
+is the
+hardware and software that support the operations or functions of a
+business. Security is the business management tool that ensures the
+reliable and protected operation of IT/IS. Security exists to support
+the organization's objectives, mission, and goals.
+Generally, a security framework that provides a starting point for
+implementing security should be adopted. Once security is initiated,
+fine-tuning that security is accomplished through continuous
+evaluation and stress testing. There are three common types of
+security evaluation: risk assessment, vulnerability assessment, and
+penetration testing (these are covered in detail in
+Chapter 2 and
+Chapter 15, “Security Assessment and Testing”).
+ 
+Risk assessment
+ 
+is
+identifying assets, threats, and vulnerabilities to calculate risk. Once
+risk is understood, it is used to guide the improvement of the existing
+security infrastructure.
+ 
+Vulnerability assessment
+ 
+uses automated
+tools to locate known security weaknesses, which can be addressed
+by adding more defenses or adjusting the current protections.
+
+Penetration testing
+ 
+uses trusted teams to stress-test the security
+infrastructure to find issues that may not be discovered by the prior
+two means and to find those concerns before an adversary takes
+advantage of them.
+Security should be cost-effective. Organizations do not have infinite
+budgets and, thus, must allocate their funds appropriately.
+Additionally, an organizational budget includes a percentage of
+monies dedicated to security, just as most other business tasks and
+processes require capital, not to mention payments to employees,
+insurance, retirement, etc. You should select security controls that
+provide the most significant protection for the lowest resource cost.
+Security should be legally defensible. The laws of your jurisdiction
+are the backstop of organizational security. When someone intrudes
+into your environment and breaches security, especially when such
+activities are illegal, prosecution in court may be the only available
+response for compensation or closure. Also, many decisions made by
+an organization will have legal liability issues. If required to defend a
+security action in the courtroom, legally supported security will go a
+long way toward protecting your organization from facing significant
+fines, penalties, or charges of negligence.
+Security is a journey, not a finish line. It is not a process that will
+ever be concluded. It is impossible to fully secure something because
+security issues are always changing. Our deployed technology is
+changing with the passage of time, by users' activities, and by
+adversaries discovering flaws and developing exploits. The defenses
+that were sufficient yesterday may not be sufficient tomorrow. As
+new vulnerabilities are discovered, new means of attack are crafted,
+and new exploits are built, we have to respond by reassessing our
+security infrastructure and responding appropriately.
+
+Understand and Apply Security Concepts
+
+Security management concepts and principles are inherent elements
+in a security policy and solution deployment. They define the basic
+parameters needed for a secure environment. They also define the
+goals and objectives that both policy designers and system
+implementers must achieve to create a secure solution.
+The 5 Pillars of Information Security are confidentiality, integrity,
+availability, authenticity, and nonrepudiation. The first three of
+these, namely confidentiality, integrity, and availability, are so
+commonly discussed as a group they have been labeled with their
+own phrase, the
+ 
+CIA Triad
+. The elements of the CIA Triad are often
+perceived as the primary goals and objectives of a security
+infrastructure (see
+ 
+Figure 1.1).
+FIGURE 1.1
+ 
+The CIA Triad
+Security controls are typically evaluated on how well they address
+these three core information security tenets. Vulnerabilities and risks
+are also evaluated based on the threat they pose against one or more
+of the CIA Triad principles.
+
+Confidentiality
+
+The first principle of the CIA Triad is confidentiality.
+ 
+Confidentiality
+
+is the concept of the measures used to ensure the protection of the
+secrecy of data, objects, or resources. The goal of confidentiality
+protection is to prevent or minimize unauthorized access to data.
+Confidentiality protections prevent disclosure while protecting
+authorized access.
+Violations of confidentiality are not limited to directed intentional
+attacks. Many instances of unauthorized disclosure of sensitive or
+confidential information are the result of human error, oversight, or
+ineptitude. Confidentiality violations can result from the actions of
+an end user or a system administrator. They can also occur because
+of an oversight in a security policy or a misconfigured security
+control.
+Numerous countermeasures can help ensure confidentiality against
+possible threats. These include encryption, network traffic padding,
+strict access control, rigorous authentication procedures, data
+classification, and extensive personnel training.
+Concepts, conditions, and aspects of confidentiality include the
+following:
+
+Sensitivity
+ 
+Sensitivity
+ 
+refers to the quality of information
+that could cause harm or damage if disclosed.
+
+Discretion
+ 
+Discretion
+ 
+is a decision where an operator can
+influence or control disclosure to minimize harm or damage.
+
+Criticality
+ 
+The level to which information is mission critical
+is its measure of
+ 
+criticality
+. The higher the level of criticality, the
+more likely the need to maintain the confidentiality of the
+information.
+
+Concealment
+ 
+Concealment
+ 
+is the act of hiding or preventing
+disclosure. Concealment is often viewed as a means of cover,
+obfuscation, or distraction. A related concept to concealment is
+
+security through obscurity
+, which attempts to gain protection
+through hiding, silence, or secrecy.
+
+Secrecy
+ 
+Secrecy
+ 
+is the act of keeping something a secret or
+preventing the disclosure of information.
+
+Privacy
+ 
+Privacy
+ 
+refers to keeping information confidential
+that is personally identifiable or that might cause harm,
+embarrassment, or disgrace to someone if revealed.
+
+Seclusion
+ 
+Seclusion
+ 
+involves storing something in an out-of-
+the-way location, likely with strict access controls.
+
+Isolation
+ 
+Isolation
+ 
+is the act of keeping something separated
+from others.
+Organizations should evaluate the nuances of confidentiality they
+wish to enforce. Tools and technology that implement one form of
+confidentiality might not support or allow other forms.
+
+Integrity
+
+Integrity
+ 
+is the concept of protecting the reliability and correctness
+of data. Integrity protection prevents unauthorized alterations of
+data. Properly implemented integrity protection provides a means
+for authorized changes while protecting against intended and
+malicious unauthorized activities (such as viruses and intrusions)
+and mistakes made by authorized users (such as accidents or
+oversights).
+Integrity can be examined from three perspectives:
+Preventing unauthorized subjects from making modifications
+Preventing authorized subjects from making unauthorized
+modifications, such as mistakes
+Maintaining the internal and external consistency of objects so
+that their data is a correct and true reflection of the real world
+and any relationship with any other object is valid, consistent,
+and verifiable
+For integrity to be maintained on a system, controls must be in place
+to restrict access to data, objects, and resources. Maintaining and
+validating object integrity across storage, transport, and processing
+requires numerous variations of controls and oversight.
+Numerous attacks focus on the violation of integrity. These include
+viruses, logic bombs, unauthorized access, errors in coding and
+applications, malicious modification, intentional replacement, and
+system backdoors.
+Human error, oversight, or ineptitude accounts for many instances
+of unauthorized alteration of sensitive information. They can also
+occur because of an oversight in a security policy or a misconfigured
+security control.
+Numerous countermeasures can ensure integrity against possible
+threats. These include strict access control, rigorous authentication
+procedures, intrusion detection systems, object/data encryption,
+hash verifications (see
+Chapter 6, “Cryptography and Symmetric Key
+Algorithms,” and
+Chapter 7, “PKI and Cryptographic Applications”),
+interface restrictions, input/function checks, and extensive
+personnel training.
+Concepts, conditions, and aspects of integrity include the following:
+
+Accuracy
+: Being correct and precise
+
+Truthfulness
+: Being a true reflection of reality
+
+Validity
+: Being factually or logically sound
+
+Accountability
+: Being responsible or obligated for actions and
+results
+
+Responsibility
+: Being in charge or having control over
+something or someone
+
+Completeness
+: Having all necessary components or parts
+
+Comprehensiveness
+: Being complete in scope; the full inclusion
+of all needed elements
+
+Availability
+
+Availability
+ 
+means authorized subjects are granted timely and
+uninterrupted access to objects. Often, availability protection
+controls support sufficient bandwidth and timeliness of processing
+as deemed necessary by the organization or situation. Availability
+includes efficient, uninterrupted access to objects and prevention of
+denial-of-service (DoS) attacks. Availability also implies that the
+supporting infrastructure—including network services,
+communications, and access control mechanisms—is functional and
+allows authorized users to gain access.
+For availability to be maintained on a system, controls must be in
+place to ensure authorized access and an acceptable level of
+performance, to quickly handle interruptions, provide for
+redundancy, maintain reliable backups, and prevent data loss or
+destruction.
+There are numerous threats to availability. These include device
+failure, software errors, and environmental issues (heat, static
+electricity, flooding, power loss, and so on). Some forms of attack
+focus on the violation of availability, including DoS attacks, object
+destruction, and communication interruptions.
+Many availability breaches are caused by human error, oversight, or
+ineptitude. They can also occur because of an oversight in a security
+policy or a misconfigured security control.
+Numerous countermeasures can ensure availability against possible
+threats. These include designing intermediary delivery systems
+properly, using access controls effectively, monitoring performance
+and network traffic, using firewalls and routers to prevent DoS
+attacks, implementing redundancy for critical systems, and
+maintaining and testing backup systems. Most security policies, as
+well as business continuity planning (BCP), focus on the use of fault
+tolerance features at the various levels of access/storage/security
+(that is, disk, server, or site) with the goal of eliminating single points
+of failure to maintain the availability of critical systems.
+Availability depends on both integrity and confidentiality. Without
+integrity and confidentiality, availability cannot be maintained.
+Concepts, conditions, and aspects of availability include the
+following:
+
+Usability
+: The state of being easy to use or learn or being able to
+be understood and controlled by a subject
+
+Accessibility
+: The assurance that the widest range of subjects
+can interact with a resource regardless of their capabilities or
+limitations
+
+Timeliness
+: Being prompt, on time, within a reasonable time
+frame, or providing a low-latency response
+
+DAD, Overprotection, Authenticity, Nonrepudiation, and
+AAA Services
+
+In addition to the CIA Triad, you need to consider a plethora of other
+security-related concepts and principles when designing a security
+policy and deploying a security solution. These include the DAD
+Triad, the risks of overprotection, authenticity, nonrepudiation, and
+AAA services.
+One interesting security concept is the opposite of the CIA Triad,
+which is the DAD Triad. Disclosure, alteration, and destruction make
+up the
+ 
+DAD Triad
+. The DAD Triad represents the failures of security
+protections in the CIA Triad. It may be useful to recognize what to
+look for when a security mechanism fails. Disclosure occurs when
+sensitive or confidential material is accessed by unauthorized
+entities. It is a violation of confidentiality. Alteration occurs when
+data is either maliciously or accidentally changed. It is a violation of
+integrity. Destruction occurs when a resource is damaged or made
+inaccessible to authorized users (technically, we usually call the latter
+denial of service [DoS]). Destruction is a violation of availability.
+It may also be worthwhile to know that too much security can be its
+own problem. Overprotecting confidentiality can result in a
+restriction of availability. Overprotecting integrity can result in a
+restriction of availability. Overproviding availability can result in a
+loss of confidentiality and integrity.
+
+Authenticity
+ 
+is the security concept that data is authentic or genuine
+and originates from its alleged source. This is related to integrity but
+more closely related to verifying that it is from a claimed origin.
+When data has authenticity, the recipient can have a high level of
+confidence that the data is from whom it claims to be and did not
+change in transit (or storage).
+
+Nonrepudiation
+ 
+ensures that the subject of an activity or who caused
+an event cannot deny that the event occurred. Nonrepudiation
+prevents a subject from claiming not to have sent a message, not to
+have performed an action, or not to have been the cause of an event.
+It is made possible through identification, authentication,
+authorization, auditing, and accounting. Nonrepudiation can be
+established using digital certificates, session identifiers, transaction
+logs, and numerous other transactional and access control
+mechanisms. A system built without proper enforcement of
+nonrepudiation does not provide verification that a specific entity
+performed a certain action. Nonrepudiation is an essential part of
+accounting. A suspect cannot be held accountable if they can
+repudiate the claim against them.
+
+AAA services
+ 
+are a core security mechanism of all security
+environments. The three As in this abbreviation refer to
+authentication, authorization, and accounting (or sometimes
+auditing). However, what is not as clear is that although there are
+three letters in the acronym, it actually refers to five elements:
+identification, authentication, authorization, auditing, and
+accounting. These five elements represent the following processes of
+security:
+
+Identification
+ 
+Identification
+ 
+is claiming to be an identity
+when attempting to access a secured area or system.
+
+Authentication
+ 
+Authentication
+ 
+is proving that you are that
+claimed identity.
+
+Authorization
+ 
+Authorization
+ 
+defines the permissions (i.e.,
+allow/grant and/or deny) of a resource and object access for a
+specific identity or subject.
+
+Auditing
+ 
+Auditing
+ 
+is recording a log of the events and
+activities related to the system and subjects.
+
+Accounting
+ 
+Accounting
+ 
+(aka
+ 
+accountability
+) is reviewing log
+files to check for compliance and violations in order to hold
+subjects accountable for their actions, especially violations of
+organizational security policy.
+Although AAA is typically referenced in relation to authentication
+systems, it is actually a foundational concept for security. Missing
+any of these five elements can result in an incomplete security
+mechanism. The following sections discuss identification,
+authentication, authorization, auditing, and accounting (see
+ 
+Figure
+1.2).
+FIGURE 1.2
+ 
+The five elements of AAA services
+
+Identification
+
+A subject must perform identification to start the process of
+authentication, authorization, and accounting (AAA). Providing an
+identity can involve typing in a username; swiping a smartcard;
+waving a proximity device; speaking a phrase; or positioning your
+face, hand, or finger for a camera or scanning device. Without an
+identity, a system has no way to correlate an authentication factor
+with the subject.
+Once a subject has been identified (that is, once the subject's identity
+has been recognized and verified), the identity is accountable for any
+further actions by that subject. IT systems track activity by identities,
+not by the subjects themselves. A computer doesn't know one
+individual from another, but it does know that your user account is
+different from all other user accounts. Simply claiming an identity
+does not imply access, authorization, or authority. The identity must
+be proven before use is allowed or access is granted. That process is
+authentication.
+Authentication
+
+The process of verifying whether a claimed identity is valid is
+authentication. Authentication requires the subject to provide
+additional information that corresponds to the identity they are
+claiming. The most common form of authentication is using a
+password. Authentication verifies the identity of the subject by
+comparing one or more factors against the database of valid
+identities (that is, user accounts). The capability of the subject and
+system to maintain the secrecy of the authentication factors for
+identities directly reflects the level of security of that system.
+Identification and authenticat

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "intro",
+    "title": "Introduction",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_1",
+    "title": "Chapter 1: Security Governance Through Principles and Policies",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_2",
+    "title": "Chapter 2: Personnel Security and Risk Management Concepts",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_3",
+    "title": "Chapter 3: Business Continuity Planning",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_4",
+    "title": "Chapter 4: Laws, Regulations, and Compliance",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_5",
+    "title": "Chapter 5: Protecting Security of Assets",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_6",
+    "title": "Chapter 6: Cryptography and Symmetric Key Algorithms",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_7",
+    "title": "Chapter 7: PKI and Cryptographic Applications",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_8",
+    "title": "Chapter 8: Principles of Security Models, Design, and",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_9",
+    "title": "Chapter 9: Security Vulnerabilities, Threats, and",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_10",
+    "title": "Chapter 10: Physical Security Requirements",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_11",
+    "title": "Chapter 11: Secure Network Architecture and Components",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_12",
+    "title": "Chapter 12: Secure Communications and Network Attacks",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_13",
+    "title": "Chapter 13: Managing Identity and Authentication",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_14",
+    "title": "Chapter 14: Controlling and Monitoring Access",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_15",
+    "title": "Chapter 15: Security Assessment and Testing",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_16",
+    "title": "Chapter 16: Managing Security Operations",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_17",
+    "title": "Chapter 17: Preventing and Responding to Incidents",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_18",
+    "title": "Chapter 18: Disaster Recovery Planning",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_19",
+    "title": "Chapter 19: Investigations and Ethics",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_20",
+    "title": "Chapter 20: Software Development Security",
+    "level": 1,
+    "status": "not_started"
+  },
+  {
+    "id": "section_21",
+    "title": "Chapter 21: Malicious Code and Application Attacks",
+    "level": 1,
+    "status": "not_started"
+  }
+]

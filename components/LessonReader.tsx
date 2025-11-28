@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { MessageRole } from '../types';
 import { MessageCircleQuestion } from 'lucide-react';
+import KeyConceptCard from './cards/KeyConceptCard';
+import ExamTipCard from './cards/ExamTipCard';
+import WarningCard from './cards/WarningCard';
 
 interface LessonReaderProps {
   content: string;
@@ -17,7 +20,7 @@ const LessonReader: React.FC<LessonReaderProps> = ({ content, onAskAboutSelectio
   useEffect(() => {
     const handleSelection = () => {
       const selection = window.getSelection();
-      
+
       if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
         setButtonPosition(null);
         setSelectedText('');
@@ -25,7 +28,7 @@ const LessonReader: React.FC<LessonReaderProps> = ({ content, onAskAboutSelectio
       }
 
       const text = selection.toString().trim();
-      
+
       // Filter out invalid selections
       if (!text || text.length < 3 || text.length > 800) {
         setButtonPosition(null);
@@ -40,7 +43,7 @@ const LessonReader: React.FC<LessonReaderProps> = ({ content, onAskAboutSelectio
 
       const range = selection.getRangeAt(0);
       const rect = range.getBoundingClientRect();
-      
+
       // Calculate position relative to viewport, but we might want it fixed/absolute
       // Using client coordinates for fixed positioning of the button
       setButtonPosition({
@@ -68,40 +71,97 @@ const LessonReader: React.FC<LessonReaderProps> = ({ content, onAskAboutSelectio
 
   const isModel = role === MessageRole.MODEL;
 
+  // Custom Parsing Logic for Directives
+  const renderContent = () => {
+    // Regex to find blocks: :::type \n content \n :::
+    // We use capturing group for type and content
+    const regex = /:::(key-concept|exam-tip|warning)([\s\S]*?):::/g;
+
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = regex.exec(content)) !== null) {
+      // Push text before the match
+      if (match.index > lastIndex) {
+        parts.push({
+          type: 'markdown',
+          content: content.substring(lastIndex, match.index)
+        });
+      }
+
+      // Push the directive
+      parts.push({
+        type: match[1], // key-concept, exam-tip, warning
+        content: match[2].trim()
+      });
+
+      lastIndex = regex.lastIndex;
+    }
+
+    // Push remaining text
+    if (lastIndex < content.length) {
+      parts.push({
+        type: 'markdown',
+        content: content.substring(lastIndex)
+      });
+    }
+
+    return parts.map((part, idx) => {
+      if (part.type === 'markdown') {
+        return (
+          <ReactMarkdown
+            key={idx}
+            components={{
+              code({ node, className, children, ...props }) {
+                return (
+                  <code className={`${className} bg-slate-800 text-slate-100 px-1.5 py-0.5 rounded text-sm`} {...props}>
+                    {children}
+                  </code>
+                );
+              },
+              pre({ node, children, ...props }) {
+                return (
+                  <pre className="bg-slate-900 text-slate-100 p-4 rounded-xl overflow-x-auto text-sm my-4 shadow-inner" {...props}>
+                    {children}
+                  </pre>
+                );
+              },
+              h1: ({ children }) => <h1 className="text-2xl font-bold mb-4 mt-2 text-slate-800 border-b pb-2">{children}</h1>,
+              h2: ({ children }) => <h2 className="text-xl font-bold mb-3 mt-6 text-slate-800">{children}</h2>,
+              h3: ({ children }) => <h3 className="text-lg font-bold mb-2 mt-4 text-slate-800">{children}</h3>,
+              p: ({ children }) => <p className="mb-4 text-slate-700">{children}</p>,
+              ul: ({ children }) => <ul className="list-disc pl-6 mb-4 space-y-1 text-slate-700">{children}</ul>,
+              ol: ({ children }) => <ol className="list-decimal pl-6 mb-4 space-y-1 text-slate-700">{children}</ol>,
+              li: ({ children }) => <li className="pl-1">{children}</li>,
+              blockquote: ({ children }) => <blockquote className="border-l-4 border-emerald-500 pl-4 py-1 my-4 bg-emerald-50 text-slate-700 italic rounded-r">{children}</blockquote>
+            }}
+          >
+            {part.content}
+          </ReactMarkdown>
+        );
+      }
+
+      switch (part.type) {
+        case 'key-concept':
+          return <KeyConceptCard key={idx} content={part.content} />;
+        case 'exam-tip':
+          return <ExamTipCard key={idx} content={part.content} />;
+        case 'warning':
+          return <WarningCard key={idx} content={part.content} />;
+        default:
+          return null;
+      }
+    });
+  };
+
   return (
     <div className="relative group" ref={containerRef}>
       <div className={`
         prose max-w-none text-base leading-relaxed
         ${isModel ? 'prose-slate' : 'prose-invert'}
-      `}>
-        <ReactMarkdown
-          components={{
-            code({ node, className, children, ...props }) {
-              return (
-                <code className={`${className} bg-slate-800 text-slate-100 px-1.5 py-0.5 rounded text-sm`} {...props}>
-                  {children}
-                </code>
-              );
-            },
-            pre({ node, children, ...props }) {
-              return (
-                <pre className="bg-slate-900 text-slate-100 p-4 rounded-xl overflow-x-auto text-sm my-4 shadow-inner" {...props}>
-                  {children}
-                </pre>
-              );
-            },
-            h1: ({children}) => <h1 className="text-2xl font-bold mb-4 mt-2 text-slate-800 border-b pb-2">{children}</h1>,
-            h2: ({children}) => <h2 className="text-xl font-bold mb-3 mt-6 text-slate-800">{children}</h2>,
-            h3: ({children}) => <h3 className="text-lg font-bold mb-2 mt-4 text-slate-800">{children}</h3>,
-            p: ({children}) => <p className="mb-4 text-slate-700">{children}</p>,
-            ul: ({children}) => <ul className="list-disc pl-6 mb-4 space-y-1 text-slate-700">{children}</ul>,
-            ol: ({children}) => <ol className="list-decimal pl-6 mb-4 space-y-1 text-slate-700">{children}</ol>,
-            li: ({children}) => <li className="pl-1">{children}</li>,
-            blockquote: ({children}) => <blockquote className="border-l-4 border-emerald-500 pl-4 py-1 my-4 bg-emerald-50 text-slate-700 italic rounded-r">{children}</blockquote>
-          }}
-        >
-          {content}
-        </ReactMarkdown>
+`}>
+        {renderContent()}
       </div>
 
       {/* Floating Action Button */}

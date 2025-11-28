@@ -1,0 +1,187 @@
+Chapter 1: Security Governance Through
+Principles and Policies
+1. C. Hardware destruction is a violation of availability and
+possibly integrity. Violations of confidentiality include stealing
+passwords, eavesdropping, and social engineering.
+2. B. The primary goals and objectives of security are
+confidentiality, integrity, and availability, commonly referred to
+as the CIA Triad. The other options are incorrect. A security
+infrastructure needs to establish a network's border perimeter
+security, but that is not a primary goal or objective of security.
+AAA services are a common component of secured systems,
+which can provide support for accounting, but the primary goals
+of security remain the elements of the CIA Triad. Ensuring that
+subject activities are recorded is the purpose of auditing, but
+that is not a primary goal or objective of security.
+3. B. Availability means that authorized subjects are granted timely
+and uninterrupted access to objects. Identification is claiming an
+identity, the first step of AAA services. Encryption is protecting
+the confidentiality of data by converting plaintext into
+ciphertext. Layering is the use of multiple security mechanisms
+in series.
+4. D. Security governance seeks to compare the security processes
+and infrastructure used within the organization with knowledge
+and insight obtained from external sources. The other
+statements are not related to security governance.
+5. C. A strategic plan is a long-term plan that is fairly stable. It
+defines the organization's security purpose. It defines the
+security function and aligns it with the goals, mission, and
+objectives of the organization. The tactical plan is a midterm
+plan developed to provide more details on accomplishing the
+goals set forth in the strategic plan or can be crafted ad hoc
+based on unpredicted events. An operational plan is a short-
+term, highly detailed plan based on strategic and tactical plans.
+It is valid or useful only for a short time. A rollback plan is a
+means to return to a prior state after a change does not meet
+expectations.
+6. A, C, D, F. Acquisitions and mergers place an organization at an
+increased level of risk. Such risks include inappropriate
+information disclosure, data loss, downtime, and failure to
+achieve a sufficient return on investment (ROI). Increased
+worker compliance is not a risk, but a desired security
+precaution against the risks of acquisitions. Additional insight
+into the motivations of inside attackers is not a risk, but a
+potential result of investigating breaches or incidents related to
+acquisitions.
+7. C. Payment Card Industry Data Security Standard (PCI DSS) is a
+set of security standards and requirements designed to ensure
+the protection of sensitive credit card and debit card
+information. The other options are incorrect. Information
+Technology Infrastructure Library (ITIL) was initially crafted by
+the British government for domestic use but is now an
+international standard, which is a set of recommended best
+practices for core IT security and operational processes, and is
+often used as a starting point for the crafting of a customized IT
+security solution. ISO 27000 is a family group of international
+security standards that can be the basis for implementing
+organizational security and related management practices. NIST
+Cybersecurity Framework (CSF) is designed for critical
+infrastructure and commercial organizations and consists of five
+functions: Identify, Protect, Detect, Respond, and Recover. It is
+a prescription of operational activities that are to be performed
+on an ongoing basis for the support and improvement of
+security over time.
+8. B. The security professional has the functional responsibility for
+security, including writing the security policy and implementing
+it. Senior management is ultimately responsible for the security
+maintained by an organization and should be most concerned
+about the protection of its assets. The custodian role is assigned
+to the person who is responsible for the tasks of implementing
+the prescribed protection defined by the security policy and
+senior management. An auditor is responsible for reviewing and
+verifying that the security policy is properly implemented and
+that the derived security solutions are adequate.
+9. A, B, C, E. The COBIT key principles are: Provide Stakeholder
+Value (C), Holistic Approach (A), Dynamic Governance System
+(E), Governance Distinct from Management (not listed),
+Tailored to Enterprise Needs (not listed), and End-to-End
+Governance System (B). The concept of maintaining authenticity
+and accountability are good security ideas, but not a COBIT key
+principle.
+10. A, D. Due diligence is establishing a plan, policy, and process to
+protect the interests of an organization. Due care is practicing
+the individual activities that maintain the security effort. The
+other options are incorrect; they have the terms inverted. The
+corrected statements are as follows: Due diligence is developing
+a formalized security structure containing a security policy,
+standards, baselines, guidelines, and procedures. Due care is the
+continued application of a security structure onto the IT
+infrastructure of an organization. Due diligence is knowing what
+should be done and planning for it. Due care is doing the right
+action at the right time.
+11. B. A policy is a document that defines the scope of security
+needed by the organization and discusses the assets that require
+protection and the extent to which security solutions should go
+to provide the necessary protection. A standard defines
+compulsory requirements for the homogenous use of hardware,
+software, technology, and security controls. A procedure is a
+detailed, step-by-step how-to document that describes the exact
+actions necessary to implement a specific security mechanism,
+control, or solution. A guideline offers recommendations on how
+security requirements are implemented and serves as an
+operational guide for both security professionals and users. III is
+the definition of a baseline, which was not included as a
+component option.
+12. D. When confidential documents are exposed to unauthorized
+entities, this is described by the I in STRIDE, which represents
+information disclosure. The elements of STRIDE are spoofing,
+tampering, repudiation, information disclosure, denial of
+service, and elevation of privilege.
+13. B. This scenario describes a proactive approach to threat
+modeling, which is also known as the defensive approach. A
+reactive approach or adversarial approach to threat modeling
+takes place after a product has been created and deployed. There
+is no threat modeling concept known as the qualitative
+approach. Qualitative is typically associated with a form of risk
+assessment.
+14. A, B, D. These statements are true: (A) Each link in the supply
+chain should be responsible and accountable to the next link in
+the chain; (B) Commodity vendors are unlikely to have mined
+their own metals, processed the oil for plastics, or etched the
+silicon of their chips; and (D) Failing to properly secure a supply
+chain can result in flawed or less reliable products, or even
+embedded listing or remote control mechanisms. The remaining
+option is incorrect. Even if a final product seems reasonable and
+performs all necessary functions, that does not provide
+assurance that it is secure or that it was not tampered with
+somewhere in the supply chain.
+15. D. Though not explicitly stating hardware, this scenario
+describes a typical and potential risk of a supply chain, that a
+hardware risk results in the presence of a listening mechanism
+in the final product. This scenario does not provide information
+that would indicate that the supply chain risk is focused on
+software, services, or data.
+16. B. In this scenario, Cathy should void the authorization to
+operate (ATO) of this vendor. This situation describes the fact
+that the vendor is not meeting minimal security requirements,
+which are necessary for the protection of the service and its
+customers. Writing a report is not a sufficient response to this
+discovery. You may have assumed Cathy does or does not have
+the authority to perform any of the other options, but there is no
+indication of Cathy's position in the organization. It is
+reasonable for a CEO to ask the CISO to perform such an
+evaluation. Regardless, the report should be submitted to the
+CISO, not the CIO, whose focus is primarily on ensuring that
+information is used effectively to accomplish business
+objectives, not that such use is secure. Reviewing terms and
+conditions will not make any difference in this scenario, as those
+typically apply to customers, not internal operations. Reviewing
+does not necessarily cause a change or improvement to insecure
+practices. A vendor-signed NDA has no bearing on this scenario.
+17. A. Minimum security requirements should be modeled on your
+existing security policy. This is based on the idea that when
+working with a third party, that third party should have at least
+the same security as your organization. A third-party audit is
+when a third-party auditor is brought in to perform an unbiased
+review of an entity's security infrastructure. This audit may
+reveal where there are problems, but the audit should not be the
+basis of minimum security requirements for a third party. On-
+site assessment is when you visit the site of the organization to
+interview personnel and observe their operating habits. This is
+not the basis for establishing minimum security requirements
+for a third party. Vulnerability scan results, like third-party
+audits, may reveal concerns, but it is not the basis for
+establishing minimum security requirements for a third party.
+18. C. Process for Attack Simulation and Threat Analysis (PASTA) is
+a seven-stage threat modeling methodology. PASTA is a risk-
+centric approach that aims at selecting or developing
+countermeasures in relation to the value of the assets to be
+protected. Visual, Agile, and Simple Threat (VAST) is a threat
+modeling concept that integrates threat and risk management
+into an Agile programming environment on a scalable basis.
+DREAD (Damage, Reproducibility, Exploitability, Affected
+Users, and Discoverability) is a flexible threat rating system that
+is based on the answers to five main questions about a threat.
+STRIDE is a threat categorization scheme developed by
+Microsoft.
+19. B, C, E, F, G. The five key concepts of decomposition are trust
+boundaries, dataflow paths, input points, privileged operations,
+and details about security stance and approach. Patch or update
+version management is an important part of security
+management in general; it is just not a specific component of
+decomposition. Determining open- versus closed-source code
+use is not an element of decomposition.
+20. A, B, C, D, E, F, G, H, I. All of the listed options are terms that
+relate to or are based on defense in depth: layering,
+classifications, zones, realms, compartments, silos,
+segmentations, lattice structure, and protection rings.

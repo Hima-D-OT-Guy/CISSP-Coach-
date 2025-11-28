@@ -1,0 +1,13 @@
+
+"Tip" not found in section_1
+
+"Note" not found in section_1
+
+Found "Summary" at index 102173:
+their existing supply chain management\nprocesses.\nSummary\n\nSecurity governance, management concepts, and principles are\ninherent elements in a securit
+
+Found "Review Questions" at index 111314:
+zational\nsecurity policy and their basic purpose?\nReview Questions\n1. Confidentiality, integrity, and availability are typically viewed as\nthe primary
+
+Found "Written Lab" at index 110995:
+ements; and\nenforcing service-level requirements.\nWritten Lab\n1. Discuss and describe the CIA Triad.\n2. What are the requirements to hold a person acc

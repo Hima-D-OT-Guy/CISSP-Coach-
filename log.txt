@@ -1,0 +1,298 @@
+
+≡ƒÜÇ CISSP PDF Extraction Pipeline with Page Filtering
+
+======================================================================
+
+≡ƒôû Loading PDF...
+Γ£ô Loaded 1899 pages
+
+≡ƒöì Extracting pages...
+  ΓÅ¡∩╕Å  Skipping page 1: Manually excluded page
+  ΓÅ¡∩╕Å  Skipping page 2: Manually excluded page
+  ΓÅ¡∩╕Å  Skipping page 3: Manually excluded page
+  ΓÅ¡∩╕Å  Skipping page 4: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 5: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 6: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 7: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 8: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 9: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 10: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 11: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 12: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 13: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 14: Table of Contents
+  ΓÅ¡∩╕Å  Skipping page 15: Table of Contents
+  Processed 50/1899 pages...
+  Processed 100/1899 pages...
+  Processed 150/1899 pages...
+  Processed 200/1899 pages...
+  Processed 250/1899 pages...
+  Processed 300/1899 pages...
+  Processed 350/1899 pages...
+  Processed 400/1899 pages...
+  Processed 450/1899 pages...
+  Processed 500/1899 pages...
+  Processed 550/1899 pages...
+  Processed 600/1899 pages...
+  Processed 650/1899 pages...
+  Processed 700/1899 pages...
+  Processed 750/1899 pages...
+  ΓÅ¡∩╕Å  Skipping page 800: Index
+  ΓÅ¡∩╕Å  Skipping page 801: Index
+  ΓÅ¡∩╕Å  Skipping page 802: Index
+  ΓÅ¡∩╕Å  Skipping page 803: Index
+  ΓÅ¡∩╕Å  Skipping page 804: Index
+  ΓÅ¡∩╕Å  Skipping page 805: Index
+  ΓÅ¡∩╕Å  Skipping page 806: Index
+  ΓÅ¡∩╕Å  Skipping page 807: Index
+  ΓÅ¡∩╕Å  Skipping page 808: Index
+  ΓÅ¡∩╕Å  Skipping page 809: Index
+  ΓÅ¡∩╕Å  Skipping page 810: Index
+  ΓÅ¡∩╕Å  Skipping page 811: Index
+  ΓÅ¡∩╕Å  Skipping page 812: Index
+  ΓÅ¡∩╕Å  Skipping page 813: Index
+  ΓÅ¡∩╕Å  Skipping page 814: Index
+  ΓÅ¡∩╕Å  Skipping page 815: Index
+  ΓÅ¡∩╕Å  Skipping page 816: Index
+  ΓÅ¡∩╕Å  Skipping page 817: Index
+  ΓÅ¡∩╕Å  Skipping page 818: Index
+  ΓÅ¡∩╕Å  Skipping page 819: Index
+  ΓÅ¡∩╕Å  Skipping page 820: Index
+  ΓÅ¡∩╕Å  Skipping page 821: Index
+  ΓÅ¡∩╕Å  Skipping page 822: Index
+  ΓÅ¡∩╕Å  Skipping page 823: Index
+  ΓÅ¡∩╕Å  Skipping page 824: Index
+  ΓÅ¡∩╕Å  Skipping page 825: Index
+  ΓÅ¡∩╕Å  Skipping page 826: Index
+  ΓÅ¡∩╕Å  Skipping page 827: Index
+  ΓÅ¡∩╕Å  Skipping page 828: Index
+  ΓÅ¡∩╕Å  Skipping page 829: Index
+  ΓÅ¡∩╕Å  Skipping page 830: Index
+  ΓÅ¡∩╕Å  Skipping page 831: Index
+  ΓÅ¡∩╕Å  Skipping page 832: Index
+  ΓÅ¡∩╕Å  Skipping page 833: Index
+  ΓÅ¡∩╕Å  Skipping page 834: Index
+  ΓÅ¡∩╕Å  Skipping page 835: Index
+  ΓÅ¡∩╕Å  Skipping page 836: Index
+  ΓÅ¡∩╕Å  Skipping page 837: Index
+  ΓÅ¡∩╕Å  Skipping page 838: Index
+  ΓÅ¡∩╕Å  Skipping page 839: Index
+  ΓÅ¡∩╕Å  Skipping page 840: Index
+  ΓÅ¡∩╕Å  Skipping page 841: Index
+  ΓÅ¡∩╕Å  Skipping page 842: Index
+  ΓÅ¡∩╕Å  Skipping page 843: Index
+  ΓÅ¡∩╕Å  Skipping page 844: Index
+  ΓÅ¡∩╕Å  Skipping page 845: Index
+  ΓÅ¡∩╕Å  Skipping page 846: Index
+  ΓÅ¡∩╕Å  Skipping page 847: Index
+  ΓÅ¡∩╕Å  Skipping page 848: Index
+  ΓÅ¡∩╕Å  Skipping page 849: Index
+  ΓÅ¡∩╕Å  Skipping page 850: Index
+  ΓÅ¡∩╕Å  Skipping page 851: Appendices
+  ΓÅ¡∩╕Å  Skipping page 852: Appendices
+  ΓÅ¡∩╕Å  Skipping page 853: Appendices
+  ΓÅ¡∩╕Å  Skipping page 854: Appendices
+  ΓÅ¡∩╕Å  Skipping page 855: Appendices
+  ΓÅ¡∩╕Å  Skipping page 856: Appendices
+  ΓÅ¡∩╕Å  Skipping page 857: Appendices
+  ΓÅ¡∩╕Å  Skipping page 858: Appendices
+  ΓÅ¡∩╕Å  Skipping page 859: Appendices
+  ΓÅ¡∩╕Å  Skipping page 860: Appendices
+  ΓÅ¡∩╕Å  Skipping page 861: Appendices
+  ΓÅ¡∩╕Å  Skipping page 862: Appendices
+  ΓÅ¡∩╕Å  Skipping page 863: Appendices
+  ΓÅ¡∩╕Å  Skipping page 864: Appendices
+  ΓÅ¡∩╕Å  Skipping page 865: Appendices
+  ΓÅ¡∩╕Å  Skipping page 866: Appendices
+  ΓÅ¡∩╕Å  Skipping page 867: Appendices
+  ΓÅ¡∩╕Å  Skipping page 868: Appendices
+  ΓÅ¡∩╕Å  Skipping page 869: Appendices
+  ΓÅ¡∩╕Å  Skipping page 870: Appendices
+  ΓÅ¡∩╕Å  Skipping page 871: Appendices
+  ΓÅ¡∩╕Å  Skipping page 872: Appendices
+  ΓÅ¡∩╕Å  Skipping page 873: Appendices
+  ΓÅ¡∩╕Å  Skipping page 874: Appendices
+  ΓÅ¡∩╕Å  Skipping page 875: Appendices
+  ΓÅ¡∩╕Å  Skipping page 876: Appendices
+  ΓÅ¡∩╕Å  Skipping page 877: Appendices
+  ΓÅ¡∩╕Å  Skipping page 878: Appendices
+  ΓÅ¡∩╕Å  Skipping page 879: Appendices
+  ΓÅ¡∩╕Å  Skipping page 880: Appendices
+  ΓÅ¡∩╕Å  Skipping page 881: Appendices
+  ΓÅ¡∩╕Å  Skipping page 882: Appendices
+  ΓÅ¡∩╕Å  Skipping page 883: Appendices
+  ΓÅ¡∩╕Å  Skipping page 884: Appendices
+  ΓÅ¡∩╕Å  Skipping page 885: Appendices
+  ΓÅ¡∩╕Å  Skipping page 886: Appendices
+  ΓÅ¡∩╕Å  Skipping page 887: Appendices
+  ΓÅ¡∩╕Å  Skipping page 888: Appendices
+  ΓÅ¡∩╕Å  Skipping page 889: Appendices
+  ΓÅ¡∩╕Å  Skipping page 890: Appendices
+  ΓÅ¡∩╕Å  Skipping page 891: Appendices
+  ΓÅ¡∩╕Å  Skipping page 892: Appendices
+  ΓÅ¡∩╕Å  Skipping page 893: Appendices
+  ΓÅ¡∩╕Å  Skipping page 894: Appendices
+  ΓÅ¡∩╕Å  Skipping page 895: Appendices
+  ΓÅ¡∩╕Å  Skipping page 896: Appendices
+  ΓÅ¡∩╕Å  Skipping page 897: Appendices
+  ΓÅ¡∩╕Å  Skipping page 898: Appendices
+  ΓÅ¡∩╕Å  Skipping page 899: Appendices
+  ΓÅ¡∩╕Å  Skipping page 900: Appendices
+  Processed 950/1899 pages...
+  Processed 1000/1899 pages...
+  Processed 1050/1899 pages...
+  Processed 1100/1899 pages...
+  Processed 1150/1899 pages...
+  Processed 1200/1899 pages...
+  Processed 1250/1899 pages...
+  Processed 1300/1899 pages...
+  Processed 1350/1899 pages...
+  Processed 1400/1899 pages...
+  Processed 1450/1899 pages...
+  Processed 1500/1899 pages...
+  Processed 1550/1899 pages...
+  Processed 1600/1899 pages...
+  Processed 1650/1899 pages...
+  Processed 1700/1899 pages...
+  Processed 1750/1899 pages...
+  Processed 1800/1899 pages...
+  Processed 1850/1899 pages...
+Γ£ô Extracted 1783 pages (skipped 116)
+
+≡ƒÅù∩╕Å  Detecting chapters...
+  Γ£ô Found Chapter 3: "FIGURE 3.1 Earthquake hazard map of the United States" (page 16, confidence: 0.80)
+  Γ£ô Found Chapter 5: "FIGURE 5.1 Data classifications" (page 16, confidence: 0.80)
+  Γ£ô Found Chapter 6: "FIGURE 6.1 Challenge-response authentication protocol" (page 16, confidence: 0.80)
+  Γ£ô Found Chapter 7: "FIGURE 7.1 Asymmetric key cryptography" (page 16, confidence: 0.80)
+  Γ£ô Found Chapter 8: "FIGURE 8.1 Transitive trust" (page 16, confidence: 0.80)
+  Γ£ô Found Chapter 9: "FIGURE 9.1 The four-layer protection ring model" (page 16, confidence: 0.80)
+  Γ£ô Found Chapter 10: "FIGURE 10.1 A smartcard's ISO 7816 interface" (page 17, confidence: 0.90)
+  Γ£ô Found Chapter 11: "FIGURE 11.1 The OSI model" (page 17, confidence: 0.90)
+  Γ£ô Found Chapter 12: "FIGURE 12.1 IPSec's encryption of a packet in transport" (page 17, confidence: 0.90)
+  Γ£ô Found Chapter 13: "FIGURE 13.1 Hardware authenticator" (page 18, confidence: 0.80)
+  Γ£ô Found Chapter 14: "FIGURE 14.1 Role-based access control" (page 18, confidence: 0.80)
+  Γ£ô Found Chapter 15: "FIGURE 15.1 Nmap scan of a web server run from a Linux" (page 18, confidence: 0.80)
+  Γ£ô Found Chapter 16: "FIGURE 16.1 Cloud shared responsibility model" (page 19, confidence: 0.90)
+  Γ£ô Found Chapter 17: "FIGURE 17.1 Incident management" (page 19, confidence: 0.90)
+  Γ£ô Found Chapter 18: "FIGURE 18.1 Seismic hazard map" (page 19, confidence: 0.90)
+  Γ£ô Found Chapter 20: "FIGURE 20.1 RStudio Desktop IDE" (page 19, confidence: 0.90)
+  Γ£ô Found Chapter 21: "FIGURE 21.1 Account number input page" (page 20, confidence: 0.80)
+  Γ£ô Found Chapter 1: "Security and Risk Management" (page 34, confidence: 1.00)
+  Γ£ô Found Chapter 2: "Asset Security" (page 34, confidence: 1.00)
+  Γ£ô Found Chapter 3: "Security Architecture and Engineering" (page 34, confidence: 1.00)
+  Γ£ô Found Chapter 4: "Communication and Network Security" (page 34, confidence: 1.00)
+  Γ£ô Found Chapter 5: "Identity and Access Management (IAM)" (page 34, confidence: 1.00)
+  Γ£ô Found Chapter 6: "Security Assessment and Testing" (page 34, confidence: 1.00)
+  Γ£ô Found Chapter 7: "Security Operations" (page 34, confidence: 1.00)
+  Γ£ô Found Chapter 8: "Software Development Security" (page 34, confidence: 1.00)
+  Γ£ô Found Chapter 1: "Security and Risk Management" (page 44, confidence: 1.00)
+  Γ£ô Found Chapter 2: "Asset Security" (page 44, confidence: 1.00)
+  Γ£ô Found Chapter 3: "Security Architecture and Engineering 13%" (page 44, confidence: 1.00)
+  Γ£ô Found Chapter 4: "Communication and Network Security 13%" (page 44, confidence: 1.00)
+  Γ£ô Found Chapter 5: "Identity and Access Management (IAM) 13%" (page 44, confidence: 1.00)
+  Γ£ô Found Chapter 6: "Security Assessment and Testing" (page 44, confidence: 1.00)
+  Γ£ô Found Chapter 7: "Security Operations" (page 44, confidence: 1.00)
+  Γ£ô Found Chapter 8: "Software Development Security" (page 44, confidence: 1.00)
+  Γ£ô Found Chapter 1: "Security Governance Through Principles and" (page 86, confidence: 1.00)
+  Γ£ô Found Chapter 2: "Personnel Security and Risk Management" (page 155, confidence: 1.10)
+  Γ£ô Found Chapter 3: "Business Continuity Planning" (page 260, confidence: 1.00)
+  Γ£ô Found Chapter 4: "Laws, Regulations, and Compliance" (page 306, confidence: 1.00)
+  Γ£ô Found Chapter 5: "Protecting Security of Assets" (page 363, confidence: 1.10)
+  Γ£ô Found Chapter 6: "Cryptography and Symmetric Key" (page 418, confidence: 1.00)
+  Γ£ô Found Chapter 7: "PKI and Cryptographic Applications" (page 478, confidence: 1.00)
+  Γ£ô Found Chapter 8: "Principles of Security Models, Design, and" (page 545, confidence: 1.10)
+  Γ£ô Found Chapter 9: "Security Vulnerabilities, Threats, and" (page 607, confidence: 1.10)
+  Γ£ô Found Chapter 10: "Physical Security Requirements" (page 732, confidence: 1.00)
+  Γ£ô Found Chapter 7: "Security Operations" (page 732, confidence: 1.00)
+  Γ£ô Found Chapter 12: "Secure Communications and Network" (page 936, confidence: 1.00)
+  Γ£ô Found Chapter 13: "Managing Identity and Authentication" (page 1024, confidence: 1.00)
+  Γ£ô Found Chapter 14: "Controlling and Monitoring Access" (page 1082, confidence: 1.00)
+  Γ£ô Found Chapter 15: "Security Assessment and Testing" (page 1151, confidence: 1.10)
+  Γ£ô Found Chapter 16: "Managing Security Operations" (page 1215, confidence: 1.10)
+  Γ£ô Found Chapter 3: "Security Architecture and Engineering" (page 1216, confidence: 0.80)
+  Γ£ô Found Chapter 7: "Security Operations" (page 1216, confidence: 0.80)
+  Γ£ô Found Chapter 8: "Software Development Security" (page 1217, confidence: 0.90)
+  Γ£ô Found Chapter 17: "Preventing and Responding to Incidents" (page 1273, confidence: 1.10)
+  Γ£ô Found Chapter 18: "Disaster Recovery Planning" (page 1360, confidence: 1.00)
+  Γ£ô Found Chapter 19: "Investigations and Ethics" (page 1432, confidence: 1.00)
+  Γ£ô Found Chapter 20: "Software Development Security" (page 1479, confidence: 1.10)
+  Γ£ô Found Chapter 21: "Malicious Code and Application Attacks" (page 1557, confidence: 1.10)
+  Γ£ô Found Chapter 1: "Security Governance Through" (page 1633, confidence: 1.10)
+  Γ£ô Found Chapter 2: "Personnel Security and Risk" (page 1639, confidence: 1.10)
+  Γ£ô Found Chapter 3: "Business Continuity Planning" (page 1647, confidence: 1.10)
+  Γ£ô Found Chapter 4: "Laws, Regulations, and" (page 1651, confidence: 1.10)
+  Γ£ô Found Chapter 5: "Protecting Security of Assets" (page 1655, confidence: 1.10)
+  Γ£ô Found Chapter 6: "Cryptography and Symmetric Key" (page 1660, confidence: 1.00)
+  Γ£ô Found Chapter 7: "PKI and Cryptographic" (page 1664, confidence: 1.00)
+  Γ£ô Found Chapter 8: "Principles of Security Models," (page 1667, confidence: 1.10)
+  Γ£ô Found Chapter 9: "Security Vulnerabilities, Threats," (page 1672, confidence: 1.00)
+  Γ£ô Found Chapter 10: "Physical Security Requirements" (page 1680, confidence: 1.00)
+  Γ£ô Found Chapter 11: "Secure Network Architecture and" (page 1686, confidence: 1.00)
+  Γ£ô Found Chapter 12: "Secure Communications and" (page 1693, confidence: 1.10)
+  Γ£ô Found Chapter 13: "Managing Identity and" (page 1698, confidence: 1.00)
+  Γ£ô Found Chapter 14: "Controlling and Monitoring" (page 1703, confidence: 1.10)
+  Γ£ô Found Chapter 15: "Security Assessment and" (page 1707, confidence: 1.10)
+  Γ£ô Found Chapter 16: "Managing Security Operations" (page 1710, confidence: 1.00)
+  Γ£ô Found Chapter 17: "Preventing and Responding to" (page 1714, confidence: 1.00)
+  Γ£ô Found Chapter 18: "Disaster Recovery Planning" (page 1718, confidence: 1.00)
+  Γ£ô Found Chapter 19: "Investigations and Ethics" (page 1722, confidence: 1.00)
+  Γ£ô Found Chapter 20: "Software Development Security" (page 1726, confidence: 1.00)
+  Γ£ô Found Chapter 21: "Malicious Code and Application" (page 1730, confidence: 1.00)
+  Γ£ô Found Chapter 1: "Security Governance Through" (page 1735, confidence: 1.10)
+  Γ£ô Found Chapter 2: "Personnel Security and Risk" (page 1736, confidence: 1.00)
+  Γ£ô Found Chapter 3: "Business Continuity Planning" (page 1738, confidence: 1.00)
+  Γ£ô Found Chapter 4: "Laws, Regulations, and" (page 1739, confidence: 1.10)
+  Γ£ô Found Chapter 5: "Protecting Security of Assets" (page 1741, confidence: 1.10)
+  Γ£ô Found Chapter 6: "Cryptography and Symmetric Key" (page 1742, confidence: 1.00)
+  Γ£ô Found Chapter 7: "PKI and Cryptographic" (page 1744, confidence: 1.00)
+  Γ£ô Found Chapter 8: "Principles of Security Models," (page 1745, confidence: 1.10)
+  Γ£ô Found Chapter 9: "Security Vulnerabilities, Threats," (page 1747, confidence: 1.10)
+  Γ£ô Found Chapter 10: "Physical Security Requirements" (page 1749, confidence: 1.10)
+  Γ£ô Found Chapter 11: "Secure Network Architecture and" (page 1751, confidence: 1.10)
+  Γ£ô Found Chapter 12: "Secure Communications and" (page 1753, confidence: 1.10)
+  Γ£ô Found Chapter 13: "Managing Identity and" (page 1756, confidence: 1.00)
+  Γ£ô Found Chapter 14: "Controlling and Monitoring" (page 1758, confidence: 1.00)
+  Γ£ô Found Chapter 15: "Security Assessment and" (page 1759, confidence: 1.10)
+  Γ£ô Found Chapter 16: "Managing Security Operations" (page 1761, confidence: 1.10)
+  Γ£ô Found Chapter 17: "Preventing and Responding to" (page 1762, confidence: 1.00)
+  Γ£ô Found Chapter 18: "Disaster Recovery Planning" (page 1763, confidence: 1.10)
+  Γ£ô Found Chapter 19: "Investigations and Ethics" (page 1765, confidence: 1.10)
+  Γ£ô Found Chapter 20: "Software Development Security" (page 1766, confidence: 1.00)
+  Γ£ô Found Chapter 21: "Malicious Code and Application" (page 1767, confidence: 1.10)
+Γ£ô Found 21 chapters
+
+≡ƒô¥ Building structured data...
+  Γ£ô Chapter 6: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 7: 19 questions, 3 labs, 1 summaries
+  Γ£ô Chapter 2: 19 questions, 5 labs, 1 summaries
+  Γ£ô Chapter 5: 19 questions, 3 labs, 1 summaries
+  Γ£ô Chapter 8: 19 questions, 4 labs, 1 summaries
+  Γ£ô Chapter 9: 19 questions, 4 labs, 1 summaries
+  Γ£ô Chapter 13: 19 questions, 4 labs, 1 summaries
+  Γ£ô Chapter 15: 18 questions, 3 labs, 1 summaries
+  Γ£ô Chapter 16: 19 questions, 3 labs, 1 summaries
+  Γ£ô Chapter 17: 19 questions, 4 labs, 1 summaries
+  Γ£ô Chapter 20: 19 questions, 2 labs, 1 summaries
+  Γ£ô Chapter 21: 17 questions, 3 labs, 1 summaries
+  Γ£ô Chapter 1: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 3: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 4: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 12: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 14: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 10: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 11: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 18: 0 questions, 0 labs, 0 summaries
+  Γ£ô Chapter 19: 0 questions, 0 labs, 0 summaries
+
+Γ£à Validation:
+  Chapters extracted: 21/21
+  Total review questions: 206
+  Chapters with summaries: 11/21
+
+≡ƒÆ╛ Saving output...
+Γ£ô Saved to C:\Users\himan\CISSP Coach\CISSP-Coach-\public\book_data.json
+Γ£ô Debug info saved
+
+======================================================================
+Γ£¿ Extraction complete!
+
