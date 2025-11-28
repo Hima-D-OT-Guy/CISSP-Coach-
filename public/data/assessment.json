@@ -1,0 +1,405 @@
+{
+  "questions": [
+    {
+      "id": "assessment_q1",
+      "question": "Which of the following types of access control seeks to discover",
+      "options": [
+        "Preventive",
+        "Deterrent",
+        "Detection",
+        "Corrective"
+      ]
+    },
+    {
+      "id": "assessment_q2",
+      "question": "Define and detail the aspects of password selection that",
+      "options": [
+        "Is difficult to guess or unpredictable",
+        "Meets minimum length requirements",
+        "Meets specific complexity requirements",
+        "All of the above"
+      ]
+    },
+    {
+      "id": "assessment_q3",
+      "question": "Some adversaries use DoS attacks as their primary weapon to",
+      "options": [
+        "Host-based IDS",
+        "Network-based IDS",
+        "Vulnerability scanner",
+        "Penetration testing"
+      ]
+    },
+    {
+      "id": "assessment_q4",
+      "question": "Unfortunately, attackers have many options of attacks to",
+      "options": [
+        "Pretending to be a technical manager over the phone and",
+        "While surfing the web, sending to a web server a malformed",
+        "Intercepting network traffic by copying the packets as they",
+        "Sending message packets to a recipient who did not request"
+      ]
+    },
+    {
+      "id": "assessment_q5",
+      "question": "Hardware networking devices operate within the protocol stack",
+      "options": [
+        "Network Layer",
+        "Layer 1",
+        "Transport Layer",
+        "Layer 5"
+      ]
+    },
+    {
+      "id": "assessment_q6",
+      "question": "Which type of firewall automatically adjusts its filtering rules",
+      "options": [
+        "Static packet filtering",
+        "Application-level gateway",
+        "Circuit-level gateway",
+        "Stateful inspection firewall"
+      ]
+    },
+    {
+      "id": "assessment_q7",
+      "question": "A VPN can be a significant security improvement for many",
+      "options": [
+        "Wireless LAN connection",
+        "Remote access dial-up connection",
+        "WAN link",
+        "All of the above"
+      ]
+    },
+    {
+      "id": "assessment_q8",
+      "question": "Adversaries will use any and all means to harm their targets.",
+      "options": [
+        "Virus",
+        "Worm",
+        "Trojan horse",
+        "Logic bomb"
+      ]
+    },
+    {
+      "id": "assessment_q9",
+      "question": "Security is established by understanding the assets of an",
+      "options": [
+        "Contiguousness, interoperable, arranged",
+        "Authentication, authorization, accountability",
+        "Capable, available, integral",
+        "Availability, confidentiality, integrity"
+      ]
+    },
+    {
+      "id": "assessment_q10",
+      "question": "The security concept of AAA services describes the elements that",
+      "options": [
+        "Logging",
+        "Privacy",
+        "Identification verification",
+        "Authorization"
+      ]
+    },
+    {
+      "id": "assessment_q11",
+      "question": "Collusion is when two or more people work together to commit a",
+      "options": [
+        "Separation of duties",
+        "Restricted job responsibilities",
+        "Group shared user accounts",
+        "Job rotation"
+      ]
+    },
+    {
+      "id": "assessment_q12",
+      "question": "A data custodian is responsible for securing resources after",
+      "options": [
+        "Senior management",
+        "The data owner",
+        "An auditor",
+        "Security staff"
+      ]
+    },
+    {
+      "id": "assessment_q13",
+      "question": "In what phase of the Capability Maturity Model for Software",
+      "options": [
+        "Repeatable",
+        "Defined",
+        "Managed",
+        "Optimizing"
+      ]
+    },
+    {
+      "id": "assessment_q14",
+      "question": "Which one of the following is a layer of the protection ring",
+      "options": [
+        "Ring 0",
+        "Ring 1",
+        "Ring 3",
+        "Ring 4"
+      ]
+    },
+    {
+      "id": "assessment_q15",
+      "question": "TCP operates at the Transport Layer and is a connection-",
+      "options": [
+        "SYN flagged packet",
+        "ACK flagged packet",
+        "FIN flagged packet",
+        "SYN/ACK flagged packet"
+      ]
+    },
+    {
+      "id": "assessment_q16",
+      "question": "The lack of secure coding practices has enabled an uncountable",
+      "options": [
+        "Time-of-check to time-of-use",
+        "Buffer overflow",
+        "SYN flood",
+        "Distributed denial of service (DDoS)"
+      ]
+    },
+    {
+      "id": "assessment_q17",
+      "question": "Computers are based on binary mathematics. All computer",
+      "options": [
+        "0 1 0 1 1 1",
+        "0 0 1 0 0 0",
+        "0 1 1 1 1 1",
+        "1 0 0 1 0 1"
+      ]
+    },
+    {
+      "id": "assessment_q18",
+      "question": "Which of the following are considered standard data type",
+      "options": [
+        "Public",
+        "Healthy",
+        "Private",
+        "Inside only"
+      ]
+    },
+    {
+      "id": "assessment_q19",
+      "question": "The General Data Protection Regulation (GDPR) has defined",
+      "options": [
+        "A data processor is the entity assigned specific",
+        "A data custodian is the entity that performs operations on",
+        "A data controller is the entity that makes decisions about",
+        "A data owner is the entity assigned or delegated the day-to-"
+      ]
+    },
+    {
+      "id": "assessment_q20",
+      "question": "If Renee receives a digitally signed message from Mike, what key",
+      "options": [
+        "Renee's public key",
+        "Renee's private key",
+        "Mike's public key",
+        "Mike's private key"
+      ]
+    },
+    {
+      "id": "assessment_q21",
+      "question": "A systems administrator is setting up a new data management",
+      "options": [
+        "The data is encrypted in transit.",
+        "The data is encrypted in processing.",
+        "The data is redundantly stored.",
+        "The data is encrypted at rest."
+      ]
+    },
+    {
+      "id": "assessment_q22",
+      "question": "The __________ is the entity assigned specific responsibility",
+      "options": [
+        "Data owner",
+        "Data controller",
+        "Data processor",
+        "Data custodian"
+      ]
+    },
+    {
+      "id": "assessment_q23",
+      "question": "A security auditor is seeking evidence of how sensitive",
+      "options": [
+        "NAC",
+        "DLP alerts",
+        "Syslog",
+        "Log analysis"
+      ]
+    },
+    {
+      "id": "assessment_q24",
+      "question": "A new Wireless Access Point (WAP) is being installed to add",
+      "options": [
+        "IEEE 802.1X",
+        "IEEE 802.1q",
+        "Simultaneous authentication of equals (SAE)",
+        "EAP-FAST"
+      ]
+    },
+    {
+      "id": "assessment_q25",
+      "question": "When securing a mobile device, what types of authentication can",
+      "options": [
+        "Fingerprint",
+        "TOTP (time-based one-time password)",
+        "Voice",
+        "SMS (short message service)"
+      ]
+    },
+    {
+      "id": "assessment_q26",
+      "question": "A recently acquired piece of equipment is not working properly.",
+      "options": [
+        "Guest account",
+        "Privileged account",
+        "Service account",
+        "User account"
+      ]
+    },
+    {
+      "id": "assessment_q27",
+      "question": "Security should be designed and integrated into the organization",
+      "options": [
+        "Logging usage data",
+        "War dialing",
+        "Penetration testing",
+        "Deploying secured desktop workstations"
+      ]
+    },
+    {
+      "id": "assessment_q28",
+      "question": "Security needs to be designed to support the business objectives,",
+      "options": [
+        "Accountability",
+        "Confidentiality",
+        "Accessibility",
+        "Redundancy"
+      ]
+    },
+    {
+      "id": "assessment_q29",
+      "question": "Risk assessment is a process by which the assets, threats,",
+      "options": [
+        "ALE = AV * EF * ARO",
+        "ALE = ARO * EF",
+        "ALE = AV * ARO",
+        "ALE = EF * ARO"
+      ]
+    },
+    {
+      "id": "assessment_q30",
+      "question": "Incident response plans, business continuity plans, and disaster",
+      "options": [
+        "Identification of priorities",
+        "Likelihood assessment",
+        "Risk identification",
+        "Resource prioritization"
+      ]
+    },
+    {
+      "id": "assessment_q31",
+      "question": "Many events can threaten the operation, existence, and stability",
+      "options": [
+        "Earthquake",
+        "Flood",
+        "Tornado",
+        "All of the above"
+      ]
+    },
+    {
+      "id": "assessment_q32",
+      "question": "What kind of recovery facility enables an organization to resume",
+      "options": [
+        "Hot site",
+        "Warm site",
+        "Cold site",
+        "All of the above"
+      ]
+    },
+    {
+      "id": "assessment_q33",
+      "question": "During an account review, an auditor provided the following",
+      "options": [
+        "Minimum password length",
+        "Account lockout",
+        "Password history and minimum age",
+        "Password maximum age"
+      ]
+    },
+    {
+      "id": "assessment_q34",
+      "question": "Any evidence to be used in a court proceeding must abide by the",
+      "options": [
+        "Best evidence",
+        "Parol evidence",
+        "Documentary evidence",
+        "Testimonial evidence"
+      ]
+    },
+    {
+      "id": "assessment_q35",
+      "question": "DevOps manager John is concerned with the CEO's plan to",
+      "options": [
+        "Code from third parties will need to be manually reviewed",
+        "If the third party goes out of business, existing code may",
+        "Third-party code development is always more expensive.",
+        "A software escrow agreement should be established."
+      ]
+    },
+    {
+      "id": "assessment_q36",
+      "question": "When TLS is being used to secure web communications, what",
+      "options": [
+        "SHTTP://",
+        "TLS://",
+        "FTPS://",
+        "HTTPS://"
+      ]
+    },
+    {
+      "id": "assessment_q37",
+      "question": "A new update has been released by the vendor of an important",
+      "options": [
+        "Business continuity planning (BCP)",
+        "Onboarding",
+        "Change management",
+        "Static analysis"
+      ]
+    },
+    {
+      "id": "assessment_q38",
+      "question": "What type of token device produces new time-derived",
+      "options": [
+        "HOTP",
+        "HMAC",
+        "SAML",
+        "TOTP"
+      ]
+    },
+    {
+      "id": "assessment_q39",
+      "question": "Your organization is moving a significant portion of their data",
+      "options": [
+        "Data retention policy",
+        "Number of customers",
+        "Hardware used to support VMs",
+        "Whether they offer MaaS, IDaaS, and SaaS"
+      ]
+    },
+    {
+      "id": "assessment_q40",
+      "question": "Most software vulnerabilities exist because of a lack of secure or",
+      "options": [
+        "Using immutable systems",
+        "Using stored procedures",
+        "Using code signing",
+        "Using server-side validation"
+      ]
+    }
+  ],
+  "answers": {}
+}

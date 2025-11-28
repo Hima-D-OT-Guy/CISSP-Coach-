@@ -346,10 +346,42 @@ async function main() {
     }
   });
 
-  // 4. Save
-  console.log('\n💾 Saving...');
-  fs.writeFileSync(OUTPUT_JSON, JSON.stringify(bookData, null, 2));
-  console.log(`✓ Saved to ${OUTPUT_JSON}`);
-}
+  // 4. Save Split Data
+  console.log('\n💾 Saving split data...');
 
+  const DATA_DIR = path.resolve(__dirname, '../public/data');
+  const CHAPTERS_DIR = path.join(DATA_DIR, 'chapters');
+
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR);
+  if (!fs.existsSync(CHAPTERS_DIR)) fs.mkdirSync(CHAPTERS_DIR);
+
+  // 4.1 Save TOC & Metadata
+  const tocData = {
+    metadata: bookData.metadata,
+    toc: bookData.toc,
+    objectiveMap: bookData.objectiveMap
+  };
+  fs.writeFileSync(path.join(DATA_DIR, 'toc.json'), JSON.stringify(tocData, null, 2));
+  console.log(`✓ Saved TOC to public/data/toc.json`);
+
+  // 4.2 Save Assessment Test
+  fs.writeFileSync(path.join(DATA_DIR, 'assessment.json'), JSON.stringify(bookData.assessmentTest, null, 2));
+  console.log(`✓ Saved Assessment Test to public/data/assessment.json`);
+
+  // 4.3 Save Chapters
+  Object.keys(bookData.sections).forEach(chapterId => {
+    const chapterData = {
+      id: chapterId,
+      content: bookData.sections[chapterId],
+      elements: bookData.chapterElements[chapterId] || {}
+    };
+    fs.writeFileSync(path.join(CHAPTERS_DIR, `${chapterId}.json`), JSON.stringify(chapterData, null, 2));
+  });
+  console.log(`✓ Saved ${Object.keys(bookData.sections).length} chapters to public/data/chapters/`);
+
+  // Legacy support (Required for current App.tsx)
+  fs.writeFileSync(OUTPUT_JSON, JSON.stringify(bookData, null, 2));
+  console.log(`✓ Saved legacy bundle to ${OUTPUT_JSON}`);
+
+}
 main();
