@@ -100,12 +100,19 @@ export interface ChapterElements {
   reviewQuestions: QuizQuestion[];
 }
 
+export interface ObjectiveMapItem {
+  domainId: string;
+  description: string;
+  chapters: number[];
+}
+
 export interface ProcessedBook {
-  fullText: string;
+  fullText?: string; // Optional now (lazy loaded)
   sections: Record<string, string>;
   toc: TOCItem[];
   assessmentTest?: AssessmentTest;
   chapterElements?: Record<string, ChapterElements>;
+  objectiveMap?: ObjectiveMapItem[]; // Added for the new map feature
 }
 
 export interface AppState {
@@ -117,6 +124,7 @@ export interface AppState {
   chatHistory: Message[];
   stats: DomainStats[];
   toc?: TOCItem[];
+  objectiveMap?: ObjectiveMapItem[]; // Store map data in state
   apiKeyValid: boolean;
   tokenCount?: number;
   userSettings?: UserSettings;

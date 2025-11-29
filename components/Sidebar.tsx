@@ -1,269 +1,209 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
-  BookOpen,
-  Target,
-  GraduationCap,
-  ShieldCheck,
-  Menu,
-  X,
-  List,
-  BarChart2,
+  Book,
   ChevronRight,
   ChevronDown,
-  CheckCircle2,
-  Circle,
-  PlayCircle,
   Shield,
-  Settings
+  Menu,
+  X,
+  CheckCircle,
+  Circle,
+  LayoutDashboard,
+  GraduationCap
 } from 'lucide-react';
-import { DomainStats, TeachingMode, TOCItem, TopicStatus } from '../types';
-import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip, Cell } from 'recharts';
+import { TOCItem, DomainStats, TeachingMode, ObjectiveMapItem } from '../types';
 
 interface SidebarProps {
   stats: DomainStats[];
-  toc?: TOCItem[];
+  toc: TOCItem[];
   currentMode: TeachingMode;
   tokenCount?: number;
   onModeChange: (mode: TeachingMode) => void;
-  onTopicClick?: (topicId: string) => void;
+  onTopicClick: (topicId: string) => void;
   isOpen: boolean;
   onClose: () => void;
-  onResetCredentials?: () => void;
+  onResetCredentials: () => void;
+  objectiveMap?: ObjectiveMapItem[];
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ stats, toc, currentMode, tokenCount, onModeChange, onTopicClick, isOpen, onClose, onResetCredentials }) => {
-  const [activeTab, setActiveTab] = useState<'stats' | 'content'>('content');
-  const [expandedTopics, setExpandedTopics] = useState<Set<string>>(new Set());
+const Sidebar: React.FC<SidebarProps> = ({
+  stats,
+  toc,
+  currentMode,
+  tokenCount,
+  onModeChange,
+  onTopicClick,
+  isOpen,
+  onClose,
+  onResetCredentials,
+  objectiveMap
+}) => {
+  const [expandedDomains, setExpandedDomains] = useState<Record<string, boolean>>({});
 
-  const toggleTopic = (id: string) => {
-    const newExpanded = new Set(expandedTopics);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
+  const toggleDomain = (domainId: string) => {
+    setExpandedDomains(prev => ({ ...prev, [domainId]: !prev[domainId] }));
+  };
+
+  // Group Chapters by Domain
+  const domainGroups = useMemo(() => {
+    // Default structure if no map
+    const groups: Record<string, { title: string, chapters: TOCItem[] }> = {};
+
+    // Initialize 8 Domains
+    for (let i = 1; i <= 8; i++) {
+      groups[i.toString()] = { title: `Domain ${i}`, chapters: [] };
+    }
+    groups["Other"] = { title: "Appendices & Others", chapters: [] };
+
+    // Map chapters to domains based on Objective Map or heuristics
+    if (objectiveMap && objectiveMap.length > 0) {
+      // Create a mapping of Chapter Number -> Domain ID
+      const chapterToDomain: Record<number, string> = {};
+      objectiveMap.forEach(obj => {
+        const domainId = obj.domainId.split('.')[0];
+        obj.chapters.forEach(chNum => {
+          // Assign to first domain found (simplification)
+          if (!chapterToDomain[chNum]) chapterToDomain[chNum] = domainId;
+        });
+      });
+
+      toc.forEach(chapter => {
+        // Extract chapter number from ID "chapter_1" -> 1
+        const match = chapter.id.match(/chapter_(\d+)/);
+        if (match) {
+          const chNum = parseInt(match[1]);
+          const domainId = chapterToDomain[chNum] || "Other";
+          if (!groups[domainId]) groups[domainId] = { title: `Domain ${domainId}`, chapters: [] };
+          groups[domainId].chapters.push(chapter);
+        } else {
+          // Appendices etc
+          groups["Other"].chapters.push(chapter);
+        }
+      });
     } else {
-      newExpanded.add(id);
-    }
-    setExpandedTopics(newExpanded);
-  };
-
-  const getMasteryColor = (score: number) => {
-    if (score < 30) return '#ef4444'; // red-500
-    if (score < 70) return '#eab308'; // yellow-500
-    return '#22c55e'; // green-500
-  };
-
-  const navItems = [
-    { mode: TeachingMode.GUIDED, icon: BookOpen, label: 'Guided Course' },
-    { mode: TeachingMode.DEEP_DIVE, icon: Target, label: 'Deep Dive' },
-    { mode: TeachingMode.EXAM_PRACTICE, icon: GraduationCap, label: 'Exam Practice' },
-  ];
-
-  const renderTOCItem = (item: TOCItem) => {
-    const hasChildren = item.children && item.children.length > 0;
-    const isExpanded = expandedTopics.has(item.id);
-
-    let StatusIcon = Circle;
-    let statusColor = "text-slate-600";
-
-    if (item.status === 'completed') {
-      StatusIcon = CheckCircle2;
-      statusColor = "text-emerald-500";
-    } else if (item.status === 'in_progress') {
-      StatusIcon = PlayCircle;
-      statusColor = "text-indigo-400";
+      // Fallback: List all in one group
+      groups["1"] = { title: "All Chapters", chapters: toc };
     }
 
-    return (
-      <div key={item.id} className="ml-2">
-        <div
-          className={`
-            flex items-center gap-2 p-2 rounded-lg cursor-pointer transition-colors
-            ${item.status === 'in_progress' ? 'bg-slate-800' : 'hover:bg-slate-800/50'}
-          `}
-          onClick={(e) => {
-            e.stopPropagation();
-            if (hasChildren) toggleTopic(item.id);
-            if (onTopicClick) onTopicClick(item.id);
-          }}
-        >
-          {hasChildren ? (
-            <button onClick={(e) => { e.stopPropagation(); toggleTopic(item.id); }}>
-              {isExpanded ? <ChevronDown size={14} className="text-slate-500" /> : <ChevronRight size={14} className="text-slate-500" />}
-            </button>
-          ) : <span className="w-3.5" />}
-
-          <StatusIcon size={14} className={statusColor} />
-
-          <span className={`text-sm ${item.status === 'in_progress' ? 'text-white font-medium' : 'text-slate-300'}`}>
-            {item.title}
-          </span>
-        </div>
-
-        {hasChildren && isExpanded && (
-          <div className="ml-4 border-l border-slate-800 pl-1 mt-1 space-y-1">
-            {item.children!.map(child => renderTOCItem(child))}
-          </div>
-        )}
-      </div>
-    );
-  };
+    return groups;
+  }, [toc, objectiveMap]);
 
   return (
     <>
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-20 md:hidden"
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden backdrop-blur-sm"
           onClick={onClose}
         />
       )}
 
+      {/* Sidebar Container */}
       <div className={`
-        fixed md:static inset-y-0 left-0 z-30
-        w-80 bg-slate-900 border-r border-slate-700 text-slate-100 flex flex-col
-        transform transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-      `}>
+                fixed top-0 left-0 h-full w-80 bg-slate-950 border-r border-slate-800 
+                transform transition-transform duration-300 ease-in-out z-50
+                ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+                lg:translate-x-0 lg:static
+            `}>
         {/* Header */}
-        <div className="p-6 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="p-2 bg-emerald-500/10 rounded-lg">
-              <Shield className="w-6 h-6 text-emerald-500" />
-            </div>
-            <div>
-              <h1 className="font-bold text-lg leading-tight">CISSP Coach</h1>
-              {tokenCount && (
-                <p className="text-xs text-slate-400 font-mono">
-                  ~{(tokenCount / 1000).toFixed(1)}k tokens
-                </p>
-              )}
-            </div>
+        <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800 bg-slate-900/50 backdrop-blur">
+          <div className="flex items-center gap-2 font-bold text-xl text-slate-100">
+            <Shield className="text-emerald-500 fill-current" />
+            <span>CISSP Coach</span>
           </div>
-          <button onClick={onClose} className="md:hidden text-slate-400 hover:text-white">
-            <X size={24} />
+          <button onClick={onClose} className="lg:hidden text-slate-400 hover:text-white">
+            <X size={20} />
           </button>
         </div>
 
-        {/* Tabs */}
-        <div className="flex border-b border-slate-700">
-          <button
-            onClick={() => setActiveTab('content')}
-            className={`flex-1 py-3 text-sm font-medium flex items-center justify-center gap-2 transition-colors relative
-              ${activeTab === 'content' ? 'text-emerald-400' : 'text-slate-400 hover:text-slate-200'}
-            `}
-          >
-            <List size={16} />
-            Content
-            {activeTab === 'content' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-500" />}
-          </button>
-          <button
-            onClick={() => setActiveTab('stats')}
-            className={`flex-1 py-3 text-sm font-medium flex items-center justify-center gap-2 transition-colors relative
-              ${activeTab === 'stats' ? 'text-emerald-400' : 'text-slate-400 hover:text-slate-200'}
-            `}
-          >
-            <BarChart2 size={16} />
-            Progress
-            {activeTab === 'stats' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-500" />}
-          </button>
-        </div>
+        {/* Scrollable Content */}
+        <div className="overflow-y-auto h-[calc(100vh-4rem)] p-4 space-y-6">
 
-        {/* Navigation Modes */}
-        <div className="p-4 space-y-2 border-b border-slate-800">
-          {navItems.map((item) => (
+          {/* Main Navigation */}
+          <div className="space-y-1">
             <button
-              key={item.mode}
-              onClick={() => {
-                onModeChange(item.mode);
-                onClose();
-              }}
-              className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg transition-colors text-xs font-medium
-                ${currentMode === item.mode
-                  ? 'bg-emerald-600/20 text-emerald-400 border border-emerald-600/30'
-                  : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
-                }`}
+              onClick={() => onTopicClick('')} // Empty string for Dashboard
+              className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-300 hover:bg-slate-800/50 hover:text-emerald-400 rounded-lg transition-colors"
             >
-              <item.icon size={16} />
-              {item.label}
+              <LayoutDashboard size={18} />
+              Dashboard
             </button>
-          ))}
-        </div>
+            <button
+              onClick={() => onTopicClick('assessment_test')}
+              className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-300 hover:bg-slate-800/50 hover:text-emerald-400 rounded-lg transition-colors"
+            >
+              <GraduationCap size={18} />
+              Assessment Test
+            </button>
+          </div>
 
-        {/* Main Content Area */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar">
-          {activeTab === 'content' ? (
-            <div className="p-4">
-              {toc ? (
-                <div className="space-y-1">
-                  {toc.map(item => renderTOCItem(item))}
-                </div>
-              ) : (
-                <div className="text-center py-10 text-slate-500 text-sm">
-                  <p>No content loaded.</p>
-                  <p className="text-xs mt-2">Upload a study guide to generate a Table of Contents.</p>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="p-4">
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Domain Mastery</p>
+          <div className="h-px bg-slate-800" />
 
-              <div className="h-40 w-full mb-6">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={stats}>
-                    <XAxis dataKey="id" hide />
-                    <Tooltip
-                      cursor={{ fill: 'transparent' }}
-                      contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', fontSize: '12px' }}
-                    />
-                    <Bar dataKey="score" radius={[4, 4, 0, 0]}>
-                      {stats.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={getMasteryColor(entry.score)} />
+          {/* Domains & Chapters */}
+          <div className="space-y-4">
+            <h3 className="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+              Study Modules
+            </h3>
+
+            {Object.entries(domainGroups).map(([id, group]) => (
+              group.chapters.length > 0 && (
+                <div key={id} className="space-y-1">
+                  <button
+                    onClick={() => toggleDomain(id)}
+                    className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-900 rounded-lg transition-colors group"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="w-6 h-6 rounded bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-500 group-hover:text-emerald-500 group-hover:bg-slate-800/80 transition-colors">
+                        D{id}
+                      </span>
+                      <span>{group.title}</span>
+                    </div>
+                    {expandedDomains[id] ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                  </button>
+
+                  {expandedDomains[id] && (
+                    <div className="pl-4 space-y-1 border-l border-slate-800 ml-3">
+                      {group.chapters.map(chapter => (
+                        <button
+                          key={chapter.id}
+                          onClick={() => {
+                            onTopicClick(chapter.id);
+                            if (window.innerWidth < 1024) onClose();
+                          }}
+                          className="w-full text-left px-3 py-2 text-xs text-slate-500 hover:text-emerald-400 hover:bg-slate-800/30 rounded transition-colors truncate"
+                          title={chapter.title}
+                        >
+                          {chapter.title}
+                        </button>
                       ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
+                    </div>
+                  )}
+                </div>
+              )
+            ))}
+          </div>
 
-              <div className="space-y-4">
-                {stats.map((stat) => (
-                  <div key={stat.id} className="group">
-                    <div className="flex justify-between items-end mb-1">
-                      <span className="text-xs font-medium text-slate-300 truncate w-3/4" title={stat.name}>
-                        {stat.id.toUpperCase()}: {stat.name}
-                      </span>
-                      <span className="text-xs font-bold" style={{ color: getMasteryColor(stat.score) }}>
-                        {stat.score}%
-                      </span>
-                    </div>
-                    <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
-                      <div
-                        className="h-full transition-all duration-500"
-                        style={{
-                          width: `${stat.score}%`,
-                          backgroundColor: getMasteryColor(stat.score)
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* Footer / Settings */}
+          <div className="pt-6 mt-6 border-t border-slate-800">
+            <div className="px-3 py-2 bg-slate-900 rounded-lg border border-slate-800">
+              <div className="text-xs text-slate-500 mb-2">Current Mode</div>
+              <select
+                value={currentMode}
+                onChange={(e) => onModeChange(e.target.value as TeachingMode)}
+                className="w-full bg-slate-950 border border-slate-700 text-slate-300 text-xs rounded p-2 focus:ring-1 focus:ring-emerald-500 outline-none"
+              >
+                <option value={TeachingMode.GUIDED}>Guided Course</option>
+                <option value={TeachingMode.DEEP_DIVE}>Deep Dive</option>
+                <option value={TeachingMode.EXAM_PRACTICE}>Exam Practice</option>
+              </select>
             </div>
-          )}
-        </div>
 
-        {/* Footer */}
-        <div className="p-4 border-t border-slate-700 bg-slate-900/50 space-y-3">
-          {onResetCredentials && (
             <button
               onClick={onResetCredentials}
-              className="w-full flex items-center justify-center gap-2 text-xs text-slate-400 hover:text-white hover:bg-slate-800 p-2 rounded-lg transition-colors"
+              className="w-full mt-4 text-xs text-slate-600 hover:text-red-400 transition-colors"
             >
-              <Settings size={14} />
-              Settings / Reset Key
+              Reset API Key
             </button>
-          )}
-          <div className="text-xs text-slate-500 text-center">
-            Powered by Google Gemini 2.5 Flash
           </div>
         </div>
       </div>

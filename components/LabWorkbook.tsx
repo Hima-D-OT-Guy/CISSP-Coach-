@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PenTool, Sparkles, Save, CheckCircle, AlertCircle } from 'lucide-react';
 import { ChapterElements } from '../types';
 import { geminiService } from '../services/geminiService';
 
@@ -11,12 +12,24 @@ export const LabWorkbook: React.FC<LabWorkbookProps> = ({ elements, chapterTitle
     const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
     const [feedback, setFeedback] = useState<Record<number, string>>({});
     const [loadingFeedback, setLoadingFeedback] = useState<number | null>(null);
+    const [savedStatus, setSavedStatus] = useState<Record<number, boolean>>({});
 
     const handleAnswerChange = (index: number, value: string) => {
         setUserAnswers(prev => ({
             ...prev,
             [index]: value
         }));
+        // Reset saved status on change
+        if (savedStatus[index]) {
+            setSavedStatus(prev => ({ ...prev, [index]: false }));
+        }
+    };
+
+    const handleSave = (index: number) => {
+        // In a real app, this would persist to DB/Storage
+        setSavedStatus(prev => ({ ...prev, [index]: true }));
+        // Mock save delay
+        setTimeout(() => setSavedStatus(prev => ({ ...prev, [index]: false })), 2000);
     };
 
     const handleGetFeedback = async (index: number, question: string) => {
@@ -51,48 +64,90 @@ Please evaluate my answer. Is it correct? What did I miss? Provide a model answe
     };
 
     if (!elements.writtenLabs || elements.writtenLabs.length === 0) {
-        return <div className="p-6 text-gray-500">No written labs found for this chapter.</div>;
+        return (
+            <div className="flex flex-col items-center justify-center h-64 text-slate-500">
+                <PenTool className="w-12 h-12 mb-4 opacity-20" />
+                <p>No written labs found for this chapter.</p>
+            </div>
+        );
     }
 
     return (
-        <div className="p-6 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">Written Labs: {chapterTitle}</h2>
+        <div className="max-w-4xl mx-auto p-6 space-y-8">
+            <div className="mb-8">
+                <h2 className="text-2xl font-bold text-slate-100 flex items-center gap-3">
+                    <PenTool className="text-emerald-500" />
+                    Written Labs
+                </h2>
+                <p className="text-slate-400 mt-2">
+                    Practice your knowledge by answering these scenarios. Use the AI assistant to evaluate your responses.
+                </p>
+            </div>
+
             <div className="space-y-8">
                 {elements.writtenLabs.map((lab, index) => (
-                    <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
-                        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Lab {index + 1}</h3>
-                        <p className="text-gray-700 dark:text-gray-300 mb-4 font-medium">{lab.question}</p>
-
-                        <textarea
-                            value={userAnswers[index] || ''}
-                            onChange={(e) => handleAnswerChange(index, e.target.value)}
-                            placeholder="Type your answer here..."
-                            className="w-full h-32 p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100"
-                        />
-
-                        <div className="mt-4 flex justify-end">
-                            <button
-                                onClick={() => handleGetFeedback(index, lab.question)}
-                                disabled={loadingFeedback === index || !userAnswers[index]?.trim()}
-                                className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
-                            >
-                                {loadingFeedback === index ? (
-                                    <>
-                                        <span className="animate-spin mr-2">⟳</span> Analyzing...
-                                    </>
-                                ) : (
-                                    <>
-                                        📝 Evaluate My Answer
-                                    </>
-                                )}
-                            </button>
+                    <div key={index} className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg transition-all hover:border-slate-700">
+                        {/* Header */}
+                        <div className="p-6 border-b border-slate-800 bg-slate-950/50">
+                            <h3 className="text-sm font-bold text-emerald-500 uppercase tracking-wider mb-2">
+                                Lab Scenario {index + 1}
+                            </h3>
+                            <p className="text-slate-200 font-medium leading-relaxed">
+                                {lab.question}
+                            </p>
                         </div>
 
+                        {/* Input Area */}
+                        <div className="p-6 bg-slate-900">
+                            <textarea
+                                value={userAnswers[index] || ''}
+                                onChange={(e) => handleAnswerChange(index, e.target.value)}
+                                placeholder="Type your detailed answer here..."
+                                className="w-full h-48 p-4 bg-slate-950 border border-slate-800 rounded-lg text-slate-300 placeholder-slate-600 focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 outline-none resize-none transition-all"
+                            />
+
+                            <div className="mt-4 flex items-center justify-between">
+                                <div className="text-xs text-slate-500">
+                                    {userAnswers[index]?.length || 0} characters
+                                </div>
+                                <div className="flex gap-3">
+                                    <button
+                                        onClick={() => handleSave(index)}
+                                        className="px-4 py-2 text-slate-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-2"
+                                    >
+                                        {savedStatus[index] ? <CheckCircle size={16} className="text-emerald-500" /> : <Save size={16} />}
+                                        {savedStatus[index] ? 'Saved' : 'Save Draft'}
+                                    </button>
+                                    <button
+                                        onClick={() => handleGetFeedback(index, lab.question)}
+                                        disabled={loadingFeedback === index || !userAnswers[index]?.trim()}
+                                        className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-sm font-medium transition-all shadow-lg shadow-emerald-900/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                                    >
+                                        {loadingFeedback === index ? (
+                                            <>
+                                                <span className="animate-spin">⟳</span> Analyzing...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Sparkles size={16} /> Evaluate Answer
+                                            </>
+                                        )}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Feedback Section */}
                         {feedback[index] && (
-                            <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-md animate-fade-in">
-                                <h4 className="text-sm font-bold text-green-800 dark:text-green-300 mb-2">Expert Feedback:</h4>
-                                <div className="prose dark:prose-invert text-sm max-w-none">
-                                    {feedback[index]}
+                            <div className="border-t border-slate-800 bg-slate-950/30 p-6 animate-in fade-in slide-in-from-top-2">
+                                <div className="flex items-center gap-2 mb-4 text-emerald-400">
+                                    <Sparkles size={18} />
+                                    <h4 className="font-bold text-sm uppercase tracking-wider">AI Coach Feedback</h4>
+                                </div>
+                                <div className="prose prose-invert prose-sm max-w-none text-slate-300 leading-relaxed">
+                                    {feedback[index].split('\n').map((line, i) => (
+                                        <p key={i} className="mb-2">{line}</p>
+                                    ))}
                                 </div>
                             </div>
                         )}

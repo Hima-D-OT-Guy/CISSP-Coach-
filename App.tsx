@@ -7,6 +7,7 @@ import SetupModal from './components/SetupModal';
 import { AssessmentQuiz } from './components/AssessmentQuiz';
 import { LabWorkbook } from './components/LabWorkbook';
 import { TopicExplainer } from './components/TopicExplainer';
+import ObjectiveMap from './components/ObjectiveMap';
 import { AppState, TeachingMode, Message, MessageRole, TOCItem, UserSettings, ProcessedBook } from './types';
 import { INITIAL_DOMAINS } from './constants';
 import { geminiService } from './services/geminiService';
@@ -94,77 +95,116 @@ const App: React.FC = () => {
         }
     }, [state.chatHistory, state.stats, state.mode, state.hasFile, state.toc, isRestoring, state.apiKeyValid]);
 
-    // Initialize chat when file is processed
-    const handleFileProcessed = async (processedBook: ProcessedBook, fileName: string) => {
-        const fullText = processedBook.fullText;
-
-        console.log(`[App] File Processed: ${fileName} (${fullText.length} chars)`);
-        console.log(`[App] Chapters found: ${processedBook.toc.length}`);
-
-        setState(prev => ({ ...prev, isProcessing: true }));
+    // Lazy Load Helpers
+    const loadChapter = async (chapterId: string) => {
+        if (state.processedBook?.sections[chapterId]) return; // Already loaded
 
         try {
-            await geminiService.initializeSession(fullText);
+            console.log(`[App] Lazy Loading Chapter: ${chapterId}`);
+            setIsLoadingResponse(true);
+            const response = await fetch(`/data/chapters/${chapterId}.json`);
+            if (!response.ok) throw new Error(`Failed to load chapter ${chapterId}`);
 
-            // Use the generated TOC from the file processor instead of generating one via AI if available
-            const toc = processedBook.toc.length > 1 ? processedBook.toc : await geminiService.generateTOC();
+            const chapterData = await response.json();
 
-            console.log("[App] TOC Length:", toc.length);
-            if (toc.length > 0) {
-                console.log("[App] TOC First Item:", JSON.stringify(toc[0]));
-                console.log("[App] TOC Second Item:", JSON.stringify(toc[1]));
-            }
-
-            const estTokens = Math.ceil(fullText.length / 4);
-
-            setState(prev => ({
-                ...prev,
-                hasFile: true,
-                fileName: fileName,
-                fileContent: fullText,
-                processedBook: processedBook, // Store the structured book
-                isProcessing: false,
-                toc: toc,
-                tokenCount: estTokens,
-                chatHistory: [
-                    {
-                        id: 'welcome',
-                        role: MessageRole.MODEL,
-                        text: `**I have successfully loaded the ${fileName}.**\n\nI found **${processedBook.toc.length}** chapters/sections.\n\nI am ready to act as your CISSP Coach.\n\nWe can:\n1. Start specifically with **Domain 1: Security and Risk Management**.\n2. Create a **Baseline Assessment Quiz** to gauge your level.\n3. Jump straight into a topic of your choice.\n\n*How would you like to proceed?*`,
-                        timestamp: Date.now()
+            setState(prev => {
+                if (!prev.processedBook) return prev;
+                return {
+                    ...prev,
+                    processedBook: {
+                        ...prev.processedBook!,
+                        sections: { ...prev.processedBook!.sections, [chapterId]: chapterData.content },
+                        chapterElements: { ...prev.processedBook!.chapterElements, [chapterId]: chapterData.elements }
                     }
-                ]
-            }));
+                };
+            });
+            console.log(`[App] Chapter ${chapterId} loaded.`);
         } catch (e) {
-            console.error("[App] Initialization failed", e);
-            // Reset processing state on error would happen here in a real app
+            console.error(`[App] Failed to load chapter ${chapterId}`, e);
+        } finally {
+            setIsLoadingResponse(false);
         }
     };
 
-    // Auto-load pre-processed book data
+    const loadAssessment = async () => {
+        if (state.processedBook?.assessmentTest) return; // Already loaded
+
+        try {
+            console.log(`[App] Lazy Loading Assessment...`);
+            setIsLoadingResponse(true);
+            const response = await fetch(`/data/assessment.json`);
+            if (!response.ok) throw new Error(`Failed to load assessment`);
+
+            const assessmentData = await response.json();
+
+            setState(prev => {
+                if (!prev.processedBook) return prev;
+                return {
+                    ...prev,
+                    processedBook: {
+                        ...prev.processedBook!,
+                        assessmentTest: assessmentData
+                    }
+                };
+            });
+            console.log(`[App] Assessment loaded.`);
+        } catch (e) {
+            console.error(`[App] Failed to load assessment`, e);
+        } finally {
+            setIsLoadingResponse(false);
+        }
+    };
+
+    // Auto-load TOC (Lightweight)
     useEffect(() => {
-        const loadBookData = async () => {
+        const loadTOC = async () => {
             if (state.hasFile || !state.apiKeyValid || isRestoring || showSetup) return;
 
             try {
-                console.log("[App] Loading book data...");
+                console.log("[App] Loading TOC...");
                 setState(prev => ({ ...prev, isProcessing: true }));
 
-                const response = await fetch('/book_data.json?t=' + Date.now());
+                // Load TOC.json (Lightweight)
+                const response = await fetch('/data/toc.json?t=' + Date.now());
                 if (!response.ok) {
-                    throw new Error("Book data not found. Please run the processing script.");
+                    throw new Error("TOC data not found. Please run the processing script.");
                 }
-                const bookData = await response.json() as ProcessedBook;
-                console.log("[App] Book data loaded successfully.");
+                const tocData = await response.json();
+                console.log("[App] TOC loaded successfully.");
 
-                await handleFileProcessed(bookData, "CISSP Guide");
+                // Initialize State with TOC
+                setState(prev => ({
+                    ...prev,
+                    hasFile: true,
+                    fileName: "CISSP Guide",
+                    isProcessing: false,
+                    toc: tocData.toc,
+                    objectiveMap: tocData.objectiveMap,
+                    processedBook: {
+                        sections: {},
+                        toc: tocData.toc,
+                        chapterElements: {}
+                    },
+                    chatHistory: [
+                        {
+                            id: 'welcome',
+                            role: MessageRole.MODEL,
+                            text: `**I have successfully connected to the CISSP Knowledge Base.**\n\nI found **${tocData.toc.length}** chapters.\n\nI am ready to act as your CISSP Coach.\n\n*Select a topic from the sidebar to begin.*`,
+                            timestamp: Date.now()
+                        }
+                    ]
+                }));
+
+                // Initialize Gemini with lightweight context
+                await geminiService.initializeSession("CISSP Guide Context Loaded.");
+
             } catch (error) {
-                console.error("[App] Failed to load book data:", error);
+                console.error("[App] Failed to load TOC:", error);
                 setState(prev => ({ ...prev, isProcessing: false }));
             }
         };
 
-        loadBookData();
+        loadTOC();
     }, [state.hasFile, state.apiKeyValid, isRestoring, showSetup]);
 
     const handleSetupComplete = async (settings: UserSettings) => {
@@ -235,6 +275,14 @@ const App: React.FC = () => {
         console.log(`[App] Topic Clicked: ${topicId}`);
         setActiveTopicId(topicId);
         setActiveTab('chat'); // Reset to chat view on new topic
+
+        if (topicId === 'assessment_test') {
+            await loadAssessment();
+            return;
+        }
+
+        // Lazy load chapter content
+        await loadChapter(topicId);
 
         // Find topic title
         const findTopic = (items: TOCItem[]): string | undefined => {
@@ -314,9 +362,32 @@ const App: React.FC = () => {
             );
         }
 
+        // 0. Dashboard / Objective Map (Default View)
+        if (!activeTopicId) {
+            return (
+                <div className="flex-1 overflow-y-auto bg-slate-950">
+                    <ObjectiveMap
+                        mapData={state.objectiveMap || []}
+                        onDomainSelect={(domainId) => {
+                            console.log(`Selected Domain: ${domainId}`);
+                            // Future: Filter sidebar or scroll to domain
+                        }}
+                    />
+                </div>
+            );
+        }
+
         // 1. Assessment Test View
-        if (activeTopicId === 'assessment_test' && state.processedBook?.assessmentTest) {
-            return <AssessmentQuiz test={state.processedBook.assessmentTest} />;
+        if (activeTopicId === 'assessment_test') {
+            if (state.processedBook?.assessmentTest) {
+                return <AssessmentQuiz test={state.processedBook.assessmentTest} />;
+            } else {
+                return (
+                    <div className="flex-1 flex items-center justify-center">
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-500"></div>
+                    </div>
+                );
+            }
         }
 
         // 2. Chapter View (Tabs)
